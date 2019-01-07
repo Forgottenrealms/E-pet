@@ -34,7 +34,7 @@ export default {
 
 .epet-tabbar {
     width: 100%;
-    height: 13.96vw;
+    height: 13.89vw;
     background: #fff;
     display: flex;  
     text-align: center;
@@ -47,14 +47,14 @@ export default {
             flex-direction: column;
 
             &.icon {
-                height: 9.375vw;
-                line-height: 9.375vw;
+                height: 9.26vw;
+                line-height: 9.26vw;
                 font-family: 'iconfont';
                 color: #9b9b9b;
                 font-size: 26px;
             }
             &.text {
-                height: 4.585vw;
+                height: 4.63vw;
                 font-size: 12px;
                 color: #b0b0b0;
             }
