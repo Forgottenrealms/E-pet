@@ -18,7 +18,8 @@ const routes = [{
     name: 'home',
     meta: {
       isNav: true,
-      title: '首页'
+      title: '首页',
+      icon: '&#xe60f;'
     },
     components: {
       default: Home,
@@ -30,7 +31,8 @@ const routes = [{
     name: 'category',
     meta: {
       isNav: true,
-      title: '分类'
+      title: '分类',
+      icon: '&#xe60c;'
     },
     components: {
       default: Category,
@@ -42,7 +44,8 @@ const routes = [{
     name: 'league',
     meta: {
       isNav: true,
-      title: '萌爪联盟'
+      title: '萌爪联盟',
+      icon: '&#xe611;'
     },
     components: {
       default: League,
@@ -54,7 +57,8 @@ const routes = [{
     name: 'cart',
     meta: {
       isNav: true,
-      title: '购物车'
+      title: '购物车',
+      icon: '&#xe614;'
     },
     components: {
       default: Cart,
@@ -66,7 +70,8 @@ const routes = [{
     name: 'mine',
     meta: {
       isNav: true,
-      title: '我的E宠'
+      title: '我的E宠',
+      icon: '&#xe60d;'
     },
     components: {
       default: Mine,
