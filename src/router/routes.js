@@ -5,6 +5,7 @@ import Cart from '@/pages/Cart'
 import Mine from '@/pages/Mine'
 
 import Tabbar from '@/components/Tabbar'
+import HomeSwiper from '../components/home/HomeSwiper'
 
 const routes = [{
     path: '/',
