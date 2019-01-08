@@ -27,3 +27,13 @@ ajax.interceptors.response.use(res => {
 export const getSwiper = () => {
   return ajax.get('/123501/api/home/swiper')
 }
+
+// 首页导航接口
+export const getNavList = () => {
+  return ajax.get('/123501/api/home/navList')
+}
+
+// 首页导航接口
+export const getActivityImg = () => {
+  return ajax.get('/123501/api/home/activity')
+}

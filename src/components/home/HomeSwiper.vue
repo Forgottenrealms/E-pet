@@ -84,7 +84,7 @@ export default {
   }
 
   .swiper-pagination {
-    bottom: 7.41vw;
+    bottom: 8.61vw;
   }
 }
 </style>
