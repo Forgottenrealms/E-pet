@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Indicator, Toast } from 'mint-ui'
 
 const ajax = axios.create({
-  baseURL: 'http://rap2api.taobao.org/app/mock/123501'
+  baseURL: 'http://rap2api.taobao.org/app/mock'
 })
 
 // 拦截器
@@ -25,5 +25,5 @@ ajax.interceptors.response.use(res => {
 
 // 轮播图接口
 export const getSwiper = () => {
-  return ajax.get('/api/home/swiper')
+  return ajax.get('/123501/api/home/swiper')
 }
