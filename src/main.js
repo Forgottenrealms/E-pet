@@ -8,10 +8,9 @@ import App from './App';
 import router from './router';
 import * as $http from './requests';
 
-Vue.use(MintUI)
-
 Vue.config.productionTip = false;
 Vue.prototype.$http = $http;
+Vue.use(MintUI)
 
 /* eslint-disable no-new */
 new Vue({
