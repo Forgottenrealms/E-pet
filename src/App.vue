@@ -78,8 +78,6 @@ body {
       flex: 1;
       overflow-x: hidden;
     }
-    &-tabbar {
-    }
   }
 }
 </style>

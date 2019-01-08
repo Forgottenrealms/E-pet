@@ -5,7 +5,8 @@ import Cart from '@/pages/Cart'
 import Mine from '@/pages/Mine'
 
 import Tabbar from '@/components/Tabbar'
-import HomeSwiper from '../components/home/HomeSwiper'
+import HomeSearch from '../components/home/HomeSearch'
+import HomeNav from '../components/home/HomeNav'
 
 const routes = [{
     path: '/',
@@ -25,7 +26,20 @@ const routes = [{
     components: {
       default: Home,
       tabbar: Tabbar
-    }
+    },
+    children: [{
+      path: 'search',
+      name: 'homeSearch',
+      components: {
+        default: HomeSearch
+      }
+    },{
+      path: 'nav/:navID',
+      name: 'homeNav',
+      components: {
+        default: HomeNav
+      }
+    }]
   },
   {
     path: '/category',
