@@ -29,6 +29,10 @@
             }"
             >筛选<span class="filter-product">&#xe69a;</span></li>
         </ul>
+<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
+=======
+         {{getdate()}}
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
         </div>
         <router-view></router-view>
         <div class="selectTab">
@@ -37,6 +41,7 @@
             <span>体型</span>
             <span>颗粒大小</span>
         </div>
+<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
         <div class="product-list">
             <div 
             v-for="item in productList" 
@@ -63,6 +68,8 @@
                 </div>
             </div>
         </div>
+=======
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
     </div>
 </template>
 
@@ -74,8 +81,12 @@ export default {
       count2: Number(1),
       count3: Number(1),
       count4: Number(1),
+<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
       setdata: "默认排序",
       productList:[]
+=======
+      setdata: "默认排序"
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
     };
   },
   name: "newListPage",
@@ -102,6 +113,7 @@ export default {
         this.$router.push("/newlistpage");
       }
     },
+<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
     getdata(){
         this.$http.listProduct().then(resp=>{
             this.productList=resp;
@@ -148,10 +160,27 @@ export default {
 //   created(){
 //    console.log(this.$http);
 //   }
+=======
+    getdate() {
+      if (this.setdata) {
+        this.setdata = this.$route.params.title;
+      } else {
+        this.setdata = "默认排序";
+      }
+    }
+  }
+  //   beforeRouteUpdate(to,from,next){
+
+  //   }
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
 };
 </script>
 <style lang="scss" scoped>
 .newListPage {
+<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
+=======
+  height: 100%;
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
   background-color: white;
 }
 @font-face {
@@ -184,6 +213,7 @@ export default {
     url("//at.alicdn.com/t/font_1003828_on15xq6njn.ttf") format("truetype"),
     url("//at.alicdn.com/t/font_1003828_on15xq6njn.svg#iconfont") format("svg");
 }
+<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
 @font-face {
   font-family: 'iconfont';  /* project id 1003828 */
   src: url('//at.alicdn.com/t/font_1003828_d9kgu7vmhrm.eot');
@@ -193,6 +223,8 @@ export default {
   url('//at.alicdn.com/t/font_1003828_d9kgu7vmhrm.ttf') format('truetype'),
   url('//at.alicdn.com/t/font_1003828_d9kgu7vmhrm.svg#iconfont') format('svg');
 }
+=======
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
 .iconfont {
   font-family: "iconfont" !important;
   font-size: 9vw;
@@ -299,6 +331,7 @@ input {
 .changecolor {
   color: red;
 }
+<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
 .products{
     display: flex;
     justify-content: flex-start;
@@ -348,5 +381,7 @@ input {
     }
 
 }
+=======
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
 </style>
 
