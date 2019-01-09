@@ -1,15 +1,19 @@
-import Home from '@/pages/Home'
-import Category from '@/pages/Category'
-import League from '@/pages/League'
-import Cart from '@/pages/Cart'
-import Mine from '@/pages/Mine'
+
 import Products from '@/components/categoryChildren/productType' 
 import Logo from '@/components/categoryChildren/logo'
 import ProductList from '@/components/categoryChildren/product'
+import newListPage from '@/components/categoryChildren/newListPage'
+import selectList from '@/components/categoryChildren/newListPageChildren/selectList'
 
 
 import Tabbar from '@/components/Tabbar'
 import Search from '@/components/search'
+
+const Home = () => import('@/pages/Home')
+const Category = () => import('@/pages/Category')
+const Cart = () => import('@/pages/Cart')
+const Mine = () => import('@/pages/Mine')
+const League  = () => import('@/pages/League')
 
 const routes = [{
   path: '/',
@@ -113,7 +117,7 @@ redirect: '/category/productType'
 },
 {
   path: '/search',
-  name: '/search',
+  name: 'search',
   meta: {
     isNav: false,
   },
@@ -121,6 +125,27 @@ redirect: '/category/productType'
     default: Search,
     tabbar: Tabbar,
   }
+},
+{
+  path:'/newlistpage',
+  name:'newlistpage',
+  meta:{
+    isNav:false,
+  },
+  components:{
+    default:newListPage,
+    // tabbar: Tabbar,
+  },
+  children:[{
+    path:'selectlist',
+    name:'selectlist',
+    meta:{
+      title:['默认排序','按人气','最新上架','按评论']
+    },
+    components:{
+      default:selectList
+    }
+  }]
 }
 ];
 
