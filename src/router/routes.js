@@ -12,11 +12,20 @@ const Category = () => import('@/pages/Category')
 const League = () => import('@/pages/League')
 const Cart = () => import('@/pages/Cart')
 const Mine = () => import('@/pages/Mine')
-const HomeList = () => import('@/pages/HomeList')
 
 import Tabbar from '@/components/Tabbar'
 import Search from '@/components/search'
-// import HomeNav from '@/components/home/HomeNav'
+
+import HomeIndex from '@/components/home/HomeIndex'
+import Bag from '@/components/home/Bag'
+import Kennel from '@/components/home/Kennel'
+import Food from '@/components/home/Food'
+import Hear from '@/components/home/Hear'
+import Cloths from '@/components/home/Cloths'
+import Toy from '@/components/home/Toy'
+import Sick from '@/components/home/Sick'
+import Worm from '@/components/home/Worm'
+import Technology from '@/components/home/Technology'
 
 const routes = [{
   path: '/',
@@ -38,10 +47,64 @@ const routes = [{
     tabbar: Tabbar
   },
   children: [{
-      path: ':listID',
-      name: 'HomeList',
+      path: 'index',
+      name: 'HomeIndex',
       components: {
-        default: HomeList
+        default: HomeIndex
+      }
+    },{
+      path: 'bag',
+      name: 'Bag',
+      components: {
+        default: Bag
+      }
+    },{
+      path: 'kennel',
+      name: 'Kennel',
+      components: {
+        default: Kennel
+      }
+    },{
+      path: 'food',
+      name: 'Food',
+      components: {
+        default: Food
+      }
+    },{
+      path: 'hear',
+      name: 'Hear',
+      components: {
+        default: Hear
+      }
+    },{
+      path: 'cloths',
+      name: 'Cloths',
+      components: {
+        default: Cloths
+      }
+    },{
+      path: 'toy',
+      name: 'Toy',
+      components: {
+        default: Toy
+      }
+    },{
+      path: 'sick',
+      name: 'Sick',
+      components: {
+        default: Sick
+      }
+    },{
+      path: 'worm',
+      name: 'Worm',
+      components: {
+        default: Worm
+      }
+    },{
+      path: 'technology',
+      name: 'Technology',
+      components: {
+        default: Technology
       }
     }]
 },

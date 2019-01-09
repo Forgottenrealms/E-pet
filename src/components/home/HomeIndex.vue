@@ -1,5 +1,5 @@
 <template>
-  <div class="epet-home-homelist">
+  <div class="epet-home-index">
     <!-- 轮播图 -->
     <div class="epet-home-swiper swiper-container">
         <div class="swiper-wrapper">
@@ -31,12 +31,12 @@
 <script>
 /** 组件 */
 // import HomeSwiper from "../components/home/HomeSwiper"; // 轮播图子组件
-import HomeSearch from "../components/home/HomeSearch"; // 首页搜索框
+import HomeSearch from "./HomeSearch"; // 首页搜索框
 import "swiper/dist/css/swiper.min.css";
 import Swiper from "swiper";
 
 export default {
-  name: "HomeList",
+  name: "Index",
   data() {
     return {
       activity: [],
@@ -115,7 +115,7 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-.epet-home-homelist {
+.epet-home-index {
     // 轮播图
     .epet-home-swiper {
         width: 100%;

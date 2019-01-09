@@ -4,9 +4,9 @@
       <router-link
         tag="li"
         v-for="item in navList"
-        :key="item.id"
+        :key="item.navPath"
         class="navs"
-        :to="`/home/${item.id}`"
+        :to="`/home/${item.path}`"
       >{{item.nav}}</router-link>
     </ul>
   </div>
@@ -20,51 +20,51 @@ export default {
   data() {
     return {
       navList: [{
-        "id": 5001,
+        "path": "index",
         "nav": "首页"
       },
       {
-        "id": 5002,
+        "path": "bag",
         "nav": "出行箱包"
       },
       {
-        "id": 5003,
+        "path": "kennel",
         "nav": "窝垫馆"
       },
       {
-        "id": 5004,
+        "path": "food",
         "nav": "狗狗主粮"
       },
       {
-        "id": 5005,
+        "path": "hear",
         "nav": "美毛沙龙"
       },
       {
-        "id": 5006,
+        "path": "cloths",
         "nav": "服饰城"
       },
       {
-        "id": 5007,
+        "path": "toy",
         "nav": "玩具城"
       },
       {
-        "id": 5008,
+        "path": "sick",
         "nav": "强化免疫"
       },
       {
-        "id": 5009,
+        "path": "worm",
         "nav": "驱虫助手"
       },
       {
-        "id": 5010,
+        "path": "technology",
         "nav": "黑科技"
       }]
     };
   },
   created() {
-    const navID = this.navList[0].id;
+    const navPath = this.navList[0].path;
     this.$nextTick(() => {
-      this.$router.push(`/home/${navID}`);
+      this.$router.push(`/home/${navPath}`);
     })
   }
   // created() {
