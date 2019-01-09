@@ -1,15 +1,22 @@
-import Home from '@/pages/Home'
-import Category from '@/pages/Category'
-import League from '@/pages/League'
-import Cart from '@/pages/Cart'
-import Mine from '@/pages/Mine'
+// import Home from '@/pages/Home'
+// import Category from '@/pages/Category'
+// import League from '@/pages/League'
+// import Cart from '@/pages/Cart'
+// import Mine from '@/pages/Mine'
 import Products from '@/components/categoryChildren/productType' 
 import Logo from '@/components/categoryChildren/logo'
 import ProductList from '@/components/categoryChildren/product'
 
+const Home = () => import('@/pages/Home')
+const Category = () => import('@/pages/Category')
+const League = () => import('@/pages/League')
+const Cart = () => import('@/pages/Cart')
+const Mine = () => import('@/pages/Mine')
+const HomeList = () => import('@/pages/HomeList')
 
 import Tabbar from '@/components/Tabbar'
 import Search from '@/components/search'
+// import HomeNav from '@/components/home/HomeNav'
 
 const routes = [{
   path: '/',
@@ -29,7 +36,14 @@ const routes = [{
   components: {
     default: Home,
     tabbar: Tabbar
-  }
+  },
+  children: [{
+      path: ':listID',
+      name: 'HomeList',
+      components: {
+        default: HomeList
+      }
+    }]
 },
 {
   path: '/category',

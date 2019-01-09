@@ -1,11 +1,12 @@
 <template>
   <div id="app" class="app">
     <div class="epet-main">
+      <router-view name="homeNav"></router-view>
       <router-view></router-view>
     </div>
-    <div class="epet-tabbar">
+    <!-- <div class="epet-tabbar"> -->
       <router-view name="tabbar"></router-view>
-    </div>
+    <!-- </div> -->
   </div>
 </template>
 
