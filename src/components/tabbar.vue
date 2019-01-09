@@ -1,9 +1,17 @@
 <template>
   <ul class="epet-tabbar">
-    <router-link v-for="nav in navs" :to="nav.path" :key="nav.name" tag="li">
+    <li 
+        v-for="nav in navs" 
+        @click="switchTab(nav.path)" 
+        :class="{
+            // 动态绑定一个class
+            currentNav: $route.fullPath.includes(nav.path)
+        }" 
+        :key="nav.name"
+    >
       <span class="icon" v-html="nav.meta.icon"></span>
       <span class="text">{{nav.meta.title}}</span>
-    </router-link>
+    </li>
   </ul>
 </template>
 
@@ -15,6 +23,16 @@ export default {
     return {
       navs: routes.filter(route => route.meta.isNav === true)
     };
+  },
+  methods: {
+      switchTab(path) {
+          // 如果是在当前页就不跳转
+          if(this.$route.fullPath.includes(path)) {
+              return;
+          } else {
+              this.$router.push(path);
+          }
+      }
   }
 };
 </script>
@@ -59,10 +77,10 @@ export default {
                 color: #b0b0b0;
             }
         }
-        &.router-link-exact-active span.icon {
+        &.currentNav span.icon {
             color: #f64033;
         }
-        &.router-link-active span.text {
+        &.currentNav span.text {
             color: #f64033;
         }
     }

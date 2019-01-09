@@ -21,18 +21,18 @@ export default {
 /* icon图标 */
 @font-face {
   font-family: 'iconfont';  /* project id 1004392 */
-  src: url('//at.alicdn.com/t/font_1004392_ew13r5ch9wr.eot');
-  src: url('//at.alicdn.com/t/font_1004392_ew13r5ch9wr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1004392_ew13r5ch9wr.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1004392_ew13r5ch9wr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1004392_ew13r5ch9wr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1004392_ew13r5ch9wr.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_1004392_xtscev5os6o.eot');
+  src: url('//at.alicdn.com/t/font_1004392_xtscev5os6o.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1004392_xtscev5os6o.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1004392_xtscev5os6o.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1004392_xtscev5os6o.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1004392_xtscev5os6o.svg#iconfont') format('svg');
 }
 </style>
 
 <style lang="scss">
 .epet-home-search {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 7.41vw;
     z-index: 1;
