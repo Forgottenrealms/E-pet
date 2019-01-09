@@ -1,6 +1,10 @@
 <template>
     <div class="product-list">
-    <div class="product" v-for="item in list" :key="item.id">
+    <div 
+    class="product" 
+    v-for="item in list" 
+    :key="item.id"
+    @touchstart="tonewlist(item.id)">
       <div class="product-img">
         <img :src="item.img" :alt="item.title">
       </div>
@@ -12,6 +16,7 @@
 </template>
 
 <script>
+const GET_KEY_NAME='chche-list'
 export default {
   name: "Product",
   data() {
@@ -38,11 +43,23 @@ export default {
     }
   },
   methods: {
-    getData() {
-      this.$http.getListData().then(resp => {
+    getData(cateID) {
+      //首先在这里做一个判断，判断catelist里面是否存在cateID,如果存在直接把他push到list数组里面
+      const catelist=JSON.parse(window.sessionStorage.getItem(GET_KEY_NAME)) || {}
+      if(Object.keys(catelist).includes(cateID.toString()))
+      {
+         this.list=catelist[cateID];
+      }
+      else{
+      this.$http.getListData(cateID).then(resp => {
         this.list = resp;
-        console.log(this.list);
+        catelist[cateID] = resp;
+         window.sessionStorage.setItem(GET_KEY_NAME, JSON.stringify(catelist));
       });
+      }
+    },
+    tonewlist(id){
+      this.$router.push('/newlistpage');
     }
   }
 };

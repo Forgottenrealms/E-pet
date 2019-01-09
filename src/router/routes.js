@@ -1,3 +1,4 @@
+<<<<<<< 48a0f26c8a5127015311fc04a5043b83a0698f74
 // import Home from '@/pages/Home'
 // import Category from '@/pages/Category'
 // import League from '@/pages/League'
@@ -8,6 +9,14 @@ import Logo from '@/components/categoryChildren/logo'
 import ProductList from '@/components/categoryChildren/product'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
+=======
+
+import Products from '@/components/categoryChildren/productType' 
+import Logo from '@/components/categoryChildren/logo'
+import ProductList from '@/components/categoryChildren/product'
+import newListPage from '@/components/categoryChildren/newListPage'
+import selectList from '@/components/categoryChildren/newListPageChildren/selectList'
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
 
 const Home = () => import('@/pages/Home')
 const Category = () => import('@/pages/Category')
@@ -18,6 +27,7 @@ const Mine = () => import('@/pages/Mine')
 import Tabbar from '@/components/Tabbar'
 import Search from '@/components/search'
 
+<<<<<<< 48a0f26c8a5127015311fc04a5043b83a0698f74
 import HomeIndex from '@/components/home/HomeIndex'
 import Bag from '@/components/home/Bag'
 import Kennel from '@/components/home/Kennel'
@@ -28,6 +38,13 @@ import Toy from '@/components/home/Toy'
 import Sick from '@/components/home/Sick'
 import Worm from '@/components/home/Worm'
 import Technology from '@/components/home/Technology'
+=======
+const Home = () => import('@/pages/Home')
+const Category = () => import('@/pages/Category')
+const Cart = () => import('@/pages/Cart')
+const Mine = () => import('@/pages/Mine')
+const League  = () => import('@/pages/League')
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
 
 const routes = [{
   path: '/',
@@ -192,7 +209,7 @@ redirect: '/category/productType'
 },
 {
   path: '/search',
-  name: '/search',
+  name: 'search',
   meta: {
     isNav: false,
   },
@@ -200,6 +217,7 @@ redirect: '/category/productType'
     default: Search,
     tabbar: Tabbar,
   }
+<<<<<<< 48a0f26c8a5127015311fc04a5043b83a0698f74
 },{
   path: '/login',
   name: 'login',
@@ -218,6 +236,29 @@ redirect: '/category/productType'
   components: {
     default: Register,
   }
+=======
+},
+{
+  path:'/newlistpage',
+  name:'newlistpage',
+  meta:{
+    isNav:false,
+  },
+  components:{
+    default:newListPage,
+    // tabbar: Tabbar,
+  },
+  children:[{
+    path:'selectlist',
+    name:'selectlist',
+    meta:{
+      title:['默认排序','按人气','最新上架','按评论']
+    },
+    components:{
+      default:selectList
+    }
+  }]
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
 }
 ];
 
