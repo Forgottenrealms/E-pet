@@ -48,3 +48,8 @@ export const getNavList = () => {
 export const getActivityImg = () => {
   return ajax.get('/123501/api/home/activity')
 }
+
+// 加载更多接口
+export const getLoadMore = () => {
+  return ajax.get('/123501/api/home/loadmore')
+}

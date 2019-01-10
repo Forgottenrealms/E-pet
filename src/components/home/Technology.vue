@@ -1,15 +1,23 @@
 <template>
-    <div class="technology">
-        黑科技
-    </div>
+  <div class="technology">
+      <home-swiper></home-swiper>
+      黑科技
+    <load-more></load-more>
+  </div>
 </template>
 
 <script>
-export default {
+import LoadMore from "./LoadMore";
+import HomeSwiper from "./HomeSwiper";
 
-}
+export default {
+  name: "Technology",
+  components: {
+    loadMore: LoadMore,
+    homeSwiper: HomeSwiper
+  }
+};
 </script>
 
 <style>
-
 </style>

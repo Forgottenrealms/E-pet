@@ -10,8 +10,6 @@
       <!-- 如果需要分页器 -->
       <div class="swiper-pagination"></div>
     </div>
-    <!-- 搜索框 -->
-    <home-search></home-search>
 
     <!--活动-->
     <div class="epet-home-activity">
@@ -72,6 +70,12 @@
     <!-- 如果需要分页器 -->
     <!-- <div class="swiper-pagination2"></div>
     </div>-->
+
+    <!-- 猜你喜欢 -->
+    <div class="epet-home-guess">
+      <h1>猜你喜欢</h1>
+      <load-more></load-more>
+    </div>
   </div>
 </template>
 
@@ -80,7 +84,7 @@
 import HomeSearch from "./HomeSearch"; // 首页搜索框
 import "swiper/dist/css/swiper.min.css";
 import Swiper from "swiper";
-// import func from "./vue-temp/vue-editor-bridge";
+import LoadMore from "./LoadMore";
 
 export default {
   name: "Index",
@@ -91,7 +95,8 @@ export default {
     };
   },
   components: {
-    homeSearch: HomeSearch
+    homeSearch: HomeSearch,
+    loadMore: LoadMore
   },
   created() {
     this.$http.getActivityImg().then(res => {
@@ -208,6 +213,7 @@ export default {
       display: flex;
       justify-content: space-around;
       align-items: center;
+      box-shadow: 0 0 1vw #eeeeee;
 
       .activity-item {
         display: flex;
@@ -333,6 +339,18 @@ export default {
       }
       p {
         margin-left: 6.94vw;
+      }
+    }
+    // 猜你喜欢
+    &-guess {
+      width: 94.72vw;
+      margin: 10vw auto 0;
+
+      h1 {
+        font-size: 5.93vw;
+        font-weight: bold;
+        color: #333333;
+        margin-bottom: 3.15vw;
       }
     }
   }
