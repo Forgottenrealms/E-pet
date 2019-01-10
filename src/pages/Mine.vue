@@ -8,6 +8,7 @@
             <div class="person">
                 <div class="picture"><img src=""/></div>
                 <p>
+                    <!-- <router-link :to="">登录</router-link> -->
                     <a href="">登录</a>
                     <span>|</span>
                     <a href="">注册</a>
@@ -28,21 +29,66 @@
 
             <ul>
                 <li>
-                    <span v-html="icon.toPay"></span><br/>
+                    <span v-html="icon.toPay"></span>
                     <span>待付款</span>
-                    <span v-html="icon.noRece"></span><br/>
+                </li>
+                <li>
+                    <span v-html="icon.noRece"></span>
                     <span>待收货</span>
-                    <span v-html="icon.toEval"></span><br/>
+                </li>
+                <li>
+                    <span v-html="icon.toEval"></span>
                     <span>待评价</span>
-                    <span v-html="icon.exchange"></span><br/>
+                </li>
+                <li>
+                    <span v-html="icon.exchange"></span>
                     <span>退换记录</span>
-                    <span v-html="icon.interna"></span><br/>
+                </li>
+                <li>
+                    <span v-html="icon.interna"></span>
                     <span>国际订单</span>
                 </li>
             </ul>
         </div>
+
+        <!-- 我的钱包 -->
+        <div class="wallet">
+            <h3>我的钱包</h3>
+            <ul>
+                <li>
+                    <span>0</span>
+                    <span>优惠券</span>
+                </li>
+                <li>
+                    <span>0</span>
+                    <span>E宠币</span>
+                </li>
+                <li>
+                    <span>0.00</span>
+                    <span>余额</span>
+                </li>
+                <li>
+                    <span>0.00</span>
+                    <span>红包</span>
+                </li>
+            </ul>
+        </div>
+        <!-- 我的服务 -->
+        <div class="service">
+            <h3>我的服务</h3>
+            <ul>
+                <li v-for="item in service" :key="item.name">
+                    <span v-html="item.meta.icon"></span>
+                    <span>{{item.meta.title}}</span>
+                </li>
+            </ul>
+            <!-- <ul>
+                <li v-for="item in service" :key="item.name">{{item.meta.title}}</li>
+            </ul> -->
+        </div>
     </div>
 </template>
+
 
 <script>
 export default { 
@@ -57,21 +103,78 @@ export default {
                 exchange:"&#xe64e;",
                 interna:"&#xe61a;"
                 },
-           
+            service: [
+                {
+                    name: 'tel',
+                    meta: {
+                        title: '联系客服',
+                        icon:'&#xe609;'
+                    }
+                },{
+                    name: 'willSell',
+                    meta: {
+                        title: '潮品预售',
+                        icon:'&#xe600;'
+                    }
+                },{
+                    name: 'groupBuy',
+                    meta: {
+                        title: '我的团购',
+                        icon:'&#xe629;'
+                    }
+                },{
+                    name: 'collect',
+                    meta: {
+                        title: '我的收藏',
+                        icon:'&#xe614;'
+                    }
+                },{
+                    name: 'gift',
+                    meta: {
+                        title: '随手送礼',
+                        icon:'&#xe656;'
+                    }
+                },{
+                    name: 'exchange',
+                    meta: {
+                        title: '我的兑换',
+                        icon:'&#xe603;'
+                    }
+                },{
+                    name: 'follow',
+                    meta: {
+                        title: '我的关注',
+                        icon:'&#xe618;'
+                    }
+                },{
+                    name: 'alliance',
+                    meta: {
+                        title: '萌爪联盟',
+                        icon:'&#xe647;'
+                    }
+                },{
+                    name: 'donation',
+                    meta: {
+                        title: '我的捐赠',
+                        icon:'&#xe601;'
+                    }
+                }
+            ]
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+@import "//at.alicdn.com/t/font_1005854_gswlqu9npj4.css";
 @font-face {
   font-family: 'iconfont';  /* project id 1005854 */
-  src: url('//at.alicdn.com/t/font_1005854_o4hb8q79evq.eot');
-  src: url('//at.alicdn.com/t/font_1005854_o4hb8q79evq.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1005854_o4hb8q79evq.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1005854_o4hb8q79evq.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1005854_o4hb8q79evq.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1005854_o4hb8q79evq.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_1005854_gswlqu9npj4.eot');
+  src: url('//at.alicdn.com/t/font_1005854_gswlqu9npj4.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1005854_gswlqu9npj4.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1005854_gswlqu9npj4.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1005854_gswlqu9npj4.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1005854_gswlqu9npj4.svg#iconfont') format('svg');
 }
 
 .mine{
@@ -91,7 +194,7 @@ export default {
             padding: 4.16vw;
             font-family: 'iconfont';
             color: white;
-            font-size: 26px;
+            font-size: 2.7vw;
             
             .icon-msg{
             float: right;
@@ -131,8 +234,6 @@ export default {
             } 
         }
 
-        
-
         .header-bottom{
             width:  94.4vw;
             height: 11.48vw;
@@ -171,7 +272,7 @@ export default {
                 width: 25vw;
                 background: url(../assets/mineImg/d.jpg) no-repeat;
                 background-size: 9vw;
-                background-position: 2vw 4.2vw;
+                background-position: 3vw 4.2vw;
                 font-size: 2.4vw;
                 line-height: 13vw;
             }
@@ -203,15 +304,104 @@ export default {
         ul{
             position:absolute;
             bottom: 10vw;
+            width: 100%;
+            height: 12vw;
+            display: flex;
+            justify-content: space-around;
             li{
                 font-family: 'iconfont';
-                float: left;
-                font-size: 14px;
-                span{
-                    
-                }
+                font-size: 2.77vw;
+                color: #333333;
+                display: flex;
+                text-align: center;
+                flex-direction: column;
+                justify-content: space-between;
+
             }
         }
     }
+    // 我的钱包
+    .wallet{
+        width: 94.8vw;
+        height: 46.8vw;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        background: #fff;
+        margin: 20px auto;
+        position: relative;
+
+        h3{
+            line-height: 16.8vw;
+            position: absolute;
+            left: 5.7vw;
+        }
+
+        ul{
+            position:absolute;
+            bottom: 9.4vw;
+            width: 100%;
+            height: 12vw;
+            display: flex;
+            justify-content: space-around;
+
+            li{
+                font-size: 2.77vw;
+                color: #333333;
+                display: flex;
+                text-align: center;
+                flex-direction: column;
+                justify-content: space-between;
+
+                :nth-child(1){
+                color: red;
+                }
+            }
+            
+        }
+    }
+    // 我的服务
+    .service{
+        width: 94.8vw;
+        height: 86.12vw;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        background: #fff;
+        margin: 20px auto;
+        position: relative;
+
+        h3{
+            line-height: 16.8vw;
+            position: absolute;
+            left: 5.7vw;
+        }
+
+        ul{
+            position:absolute;
+            top: 17vw;
+            width: 100%;
+            height: 20vw;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            li{
+                width: 25%;
+                height: 20vw;
+                color: #333333;
+                font-family: 'iconfont';
+                font-size: 2.77vw;
+                display: flex;
+                text-align: center;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                :nth-child(1){
+                    margin-bottom: 3vw;
+                }
+            }
+        }
+            
+    }
 }
+
 </style>
