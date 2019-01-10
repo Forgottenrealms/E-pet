@@ -1,18 +1,18 @@
 <template>
-  <div class="epet-home-index"> 
+  <div class="epet-home-index">
     <!-- 轮播图 -->
     <div class="epet-home-swiper swiper-container">
       <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="item in swiper" :key="item.id">
+        <div class="swiper-slide" v-for="item in swiper" :key="item.id">
           <img :src="item.img">
-      </div>
+        </div>
       </div>
       <!-- 如果需要分页器 -->
       <div class="swiper-pagination"></div>
-    </div>  
+    </div>
     <!-- 搜索框 -->
     <home-search></home-search>
-    
+
     <!--活动-->
     <div class="epet-home-activity">
       <div v-for="item in activity" :key="item.id" class="activity-item">
@@ -31,38 +31,56 @@
           <h2>见面礼</h2>
           <p>送888元优惠券</p>
           <span></span>
-        </div> 
+        </div>
         <div class="new-item">
           <h2>新客频道</h2>
           <p>你的购物指南</p>
           <span></span>
-        </div> 
+        </div>
         <div class="new-item">
           <h2>随单赠</h2>
           <p>首单满99元送零食</p>
           <span></span>
-        </div> 
+        </div>
       </div>
     </div>
     <div class="epet-home-heart">
       <h1>不到四块钱</h1>
-      <h1><span>让流浪狗</span>一天不挨饿</h1>
+      <h1>
+        <span>让流浪狗</span>一天不挨饿
+      </h1>
     </div>
     <!-- 品牌特卖 -->
     <div class="epet-home-brand">
       <h1>品牌特卖</h1>
-      <a href="javascript:void(0);">进入<span class="rightArrow">></span></a>
+      <a href="javascript:void(0);">
+        进入
+        <span class="rightArrow">></span>
+      </a>
     </div>
-    <div class="epet-home-brandImg"></div>
+    <div class="epet-home-brandImg">
+      <h1>朗跃半湿粮专场</h1>
+      <p>真材实料精湛工艺</p>
+    </div>
+    <!-- 轮播图2 -->
+    <!-- <div class="epet-home-swiper2 swiper-container2">
+      <div class="swiper-wrapper2">
+        <div class="swiper-slide" v-for="item in swiper2" :key="item.id">
+            <img :src="item.img">
+        </div>
+    </div>-->
+    <!-- 如果需要分页器 -->
+    <!-- <div class="swiper-pagination2"></div>
+    </div>-->
   </div>
 </template>
 
 <script>
 /** 组件 */
-// import HomeSwiper from "../components/home/HomeSwiper"; // 轮播图子组件
 import HomeSearch from "./HomeSearch"; // 首页搜索框
 import "swiper/dist/css/swiper.min.css";
 import Swiper from "swiper";
+// import func from "./vue-temp/vue-editor-bridge";
 
 export default {
   name: "Index",
@@ -80,10 +98,10 @@ export default {
       this.activity = res;
     });
     this.$http.getSwiper().then(res => {
-        this.swiper = res;
-        console.log(res);
-        this.$nextTick().then(this.initSwiper);
-      });
+      this.swiper = res;
+      // console.log(res);
+      this.$nextTick().then(this.initSwiper);
+    });
   },
   // beforeRouteEnter(to, from, next) {
   //     console.log("进入了")
@@ -100,7 +118,7 @@ export default {
   // },
   // beforeRouteUpdate(to, from, next) {
   //   console.log("更改了")
-    
+
   //     this.$http.getSwiper().then(res => {
   //       this.swiper = res;
   //       console.log(res);
@@ -144,7 +162,9 @@ export default {
 <style lang="scss" scoped>
 .epet-home-index {
   position: relative;
-    
+  width: 100%;
+  height: 100%;
+
   // 轮播图
   .epet-home-swiper {
     width: 100%;
@@ -152,24 +172,24 @@ export default {
     padding-top: percentage(750 / 1080);
 
     .swiper-wrapper {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
 
-        .swiper-slide {
+      .swiper-slide {
         background: #fff;
 
         img {
-            width: 100%;
-            height: 69.44vw;
+          width: 100%;
+          height: 69.44vw;
         }
-        }
+      }
     }
 
     .swiper-pagination {
-        bottom: 8.61vw;
+      bottom: 8.61vw;
     }
   }
 
@@ -243,7 +263,7 @@ export default {
           text-align: center;
 
           h2 {
-            font-size: 3.70vw;
+            font-size: 3.7vw;
             margin: 5.56vw 0 2vw;
             font-weight: bold;
           }
@@ -304,6 +324,16 @@ export default {
       margin: 0 auto;
       background: #fff7ef;
       border-radius: 5vw;
+      overflow: hidden;
+
+      h1 {
+        font-size: 4.44vw;
+        font-weight: bold;
+        margin: 20.37vw 0 1.8vw 6.94vw;
+      }
+      p {
+        margin-left: 6.94vw;
+      }
     }
   }
 }
