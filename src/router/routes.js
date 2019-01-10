@@ -188,7 +188,7 @@ redirect: '/category/productType'
   components: {
     default: Mine,
     tabbar: Tabbar
-  }
+  },
 },
 {
   path: '/search',
@@ -202,19 +202,18 @@ redirect: '/category/productType'
   }
 },{
   path: '/login',
-  name: '/login',
-  meta: {
-    isNav: false,
+  name: 'login',
+  meta:{
+    isNav:false,
   },
   components: {
     default: Login,
   }
-},
-{
+},{
   path: '/register',
-  name: '/register',
-  meta: {
-    isNav: false,
+  name: 'register',
+  meta:{
+    isNav:false,
   },
   components: {
     default: Register,

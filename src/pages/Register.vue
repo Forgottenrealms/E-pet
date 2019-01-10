@@ -1,6 +1,6 @@
 <template>
     <div class="register">
-        <p class="btn-back">&lt;</p>
+        <router-link class="btn-back" to="/mine" tag="p">&lt;</router-link>
         <p class="fast-regster">快速注册</p>
         <form class="form-redister">
             <input type="text" name="telephine" placeholder="请输入手机号"><br/>
