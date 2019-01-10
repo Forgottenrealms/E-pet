@@ -1,15 +1,23 @@
 <template>
-    <div class="worm">
-        驱虫助手
-    </div>
+  <div class="worm">
+      <home-swiper></home-swiper>
+      驱虫助手
+    <load-more></load-more>
+  </div>
 </template>
 
 <script>
-export default {
+import LoadMore from "./LoadMore";
+import HomeSwiper from "./HomeSwiper";
 
-}
+export default {
+  name: "Worm",
+  components: {
+    loadMore: LoadMore,
+    homeSwiper: HomeSwiper
+  }
+};
 </script>
 
 <style>
-
 </style>
