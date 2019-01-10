@@ -1,6 +1,6 @@
 <template>
     <div class="login">
-        <p class="btn-close">X</p>
+        <router-link class="btn-close" to="/mine" tag="p">X</router-link>
         <p class="login-title ">短信验证码登录</p>
         <form class="form-login">
             <input type="text" name="telephine" placeholder="请输入手机号"><br/>
@@ -10,7 +10,7 @@
         </form>
         <div class="login-type">
             <a>短信验证码登录</a>
-            <a>新用户注册</a>
+            <router-link to="/register" tag="a">新用户注册</router-link>
         </div>
         <!-- 其他方式登录 -->
         <div class="bottom">
@@ -113,6 +113,8 @@ export default {
             margin-top: 2.11vw;
             :nth-child(2){
                 float: right;
+                text-decoration: none;
+                color:black;
             }
     }
     .bottom{
