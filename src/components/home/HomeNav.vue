@@ -1,5 +1,10 @@
 <template>
-  <div class="epet-home-nav">
+  <div 
+    :class="{
+        'epet-home-nav': true,
+        'scroll-to-top': this.$store.state.isScrollTop
+      }" 
+    >
     <ul class="home-nav">
       <router-link
         tag="li"
@@ -110,6 +115,18 @@ export default {
 };
 </script>
 
+<style lang="scss">
+.scroll-to-top {
+  background: #fff;
+
+  .home-nav {
+    .navs {
+      color: #000 !important;
+    }
+  }
+}
+</style>
+
 <style lang="scss" scoped>
 .epet-home-nav {
   width: 100%;
@@ -118,7 +135,7 @@ export default {
   position: absolute;
   top: 7.41vw;
   left: 0;
-  z-index: 2;
+  z-index: 99;
 
   .home-nav {
     width: 215%;
