@@ -6,6 +6,8 @@
 import Products from '@/components/categoryChildren/productType' 
 import Logo from '@/components/categoryChildren/logo'
 import ProductList from '@/components/categoryChildren/product'
+import Login from '@/pages/Login'
+import Register from '@/pages/Register'
 
 const Home = () => import('@/pages/Home')
 const Category = () => import('@/pages/Category')
@@ -197,6 +199,25 @@ redirect: '/category/productType'
   components: {
     default: Search,
     tabbar: Tabbar,
+  }
+},{
+  path: '/login',
+  name: '/login',
+  meta: {
+    isNav: false,
+  },
+  components: {
+    default: Login,
+  }
+},
+{
+  path: '/register',
+  name: '/register',
+  meta: {
+    isNav: false,
+  },
+  components: {
+    default: Register,
   }
 }
 ];
