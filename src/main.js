@@ -12,7 +12,17 @@ import * as $http from './requests';
 Vue.config.productionTip = false;
 Vue.prototype.$http = $http;
 
+const appMixin = {
+  filters: {
+    tofix (val) {
+      return val.toFixed(2);
+    }
+  }
+}
+
 Vue.use(MintUI)
+
+Vue.mixin(appMixin)
 
 /* eslint-disable no-new */
 new Vue({

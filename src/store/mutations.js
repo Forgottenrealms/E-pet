@@ -6,4 +6,7 @@ export default {
       state.isScrollTop = false;
     }
   },
+  changeLoginStatus(state, status) {
+    state.isLogin = status;
+  }
 };

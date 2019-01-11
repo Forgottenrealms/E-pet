@@ -172,7 +172,8 @@ redirect: '/category/productType'
   meta: {
     isNav: true,
     title: '购物车',
-    icon: '&#xe614;'
+    icon: '&#xe668;',
+    isLogin: false
   },
   components: {
     default: Cart,
@@ -272,7 +273,7 @@ redirect: '/detail/detailproduct'
     isNav:false,
   },
   components: {
-    default: Login,
+    default: Login
   }
 },{
   path: '/register',

@@ -68,7 +68,7 @@ export default {
 .epet-home-swiper {
   width: 100%;
   height: 0;
-  padding-top: percentage(750 / 1080);
+  padding-top: percentage(630 / 1080);
   position: relative;
 
   .swiper-wrapper {
@@ -80,6 +80,10 @@ export default {
 
     .swiper-slide {
       background: red;
+
+      img {
+        height: 100%;
+      }
     }
   }
 
