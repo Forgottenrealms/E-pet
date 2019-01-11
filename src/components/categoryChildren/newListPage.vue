@@ -29,6 +29,7 @@
             }"
             >筛选<span class="filter-product">&#xe69a;</span></li>
         </ul>
+<<<<<<< HEAD
 <<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
 <<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
 =======
@@ -36,6 +37,8 @@
 >>>>>>> path:完成sessionStorage和一些列表的页面和样式
 =======
 >>>>>>> feat:实现了列表页面和详情页面
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
         </div>
         <router-view></router-view>
         <div class="selectTab">
@@ -44,10 +47,13 @@
             <span>体型</span>
             <span>颗粒大小</span>
         </div>
+<<<<<<< HEAD
 <<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
 <<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
 =======
 >>>>>>> feat:实现了列表页面和详情页面
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
         <div class="product-list">
             <div 
             v-for="item in productList" 
@@ -74,11 +80,14 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 <<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
 =======
 >>>>>>> path:完成sessionStorage和一些列表的页面和样式
 =======
 >>>>>>> feat:实现了列表页面和详情页面
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
     </div>
 </template>
 
@@ -90,6 +99,7 @@ export default {
       count2: Number(1),
       count3: Number(1),
       count4: Number(1),
+<<<<<<< HEAD
 <<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
 <<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
       setdata: "默认排序",
@@ -101,6 +111,10 @@ export default {
       setdata: "默认排序",
       productList:[]
 >>>>>>> feat:实现了列表页面和详情页面
+=======
+      setdata: "默认排序",
+      productList:[]
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
     };
   },
   name: "newListPage",
@@ -127,10 +141,13 @@ export default {
         this.$router.push("/newlistpage");
       }
     },
+<<<<<<< HEAD
 <<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
 <<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
 =======
 >>>>>>> feat:实现了列表页面和详情页面
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
     getdata(){
         this.$http.listProduct().then(resp=>{
             this.productList=resp;
@@ -148,6 +165,7 @@ export default {
                 id
             }
         });
+<<<<<<< HEAD
 <<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
     }
     // getdate() {
@@ -187,6 +205,8 @@ export default {
       }
 =======
 >>>>>>> feat:实现了列表页面和详情页面
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
     }
     // getdate() {
     //   if (this.setdata) {
@@ -213,6 +233,7 @@ export default {
   //   beforeRouteUpdate(to,from,next){
 
   //   }
+<<<<<<< HEAD
 <<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
 >>>>>>> path:完成sessionStorage和一些列表的页面和样式
 =======
@@ -220,10 +241,16 @@ export default {
 //    console.log(this.$http);
 //   }
 >>>>>>> feat:实现了列表页面和详情页面
+=======
+//   created(){
+//    console.log(this.$http);
+//   }
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
 };
 </script>
 <style lang="scss" scoped>
 .newListPage {
+<<<<<<< HEAD
 <<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
 <<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
 =======
@@ -231,6 +258,8 @@ export default {
 >>>>>>> path:完成sessionStorage和一些列表的页面和样式
 =======
 >>>>>>> feat:实现了列表页面和详情页面
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
   background-color: white;
 }
 @font-face {
@@ -263,10 +292,13 @@ export default {
     url("//at.alicdn.com/t/font_1003828_on15xq6njn.ttf") format("truetype"),
     url("//at.alicdn.com/t/font_1003828_on15xq6njn.svg#iconfont") format("svg");
 }
+<<<<<<< HEAD
 <<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
 <<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
 =======
 >>>>>>> feat:实现了列表页面和详情页面
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
 @font-face {
   font-family: 'iconfont';  /* project id 1003828 */
   src: url('//at.alicdn.com/t/font_1003828_d9kgu7vmhrm.eot');
@@ -276,11 +308,14 @@ export default {
   url('//at.alicdn.com/t/font_1003828_d9kgu7vmhrm.ttf') format('truetype'),
   url('//at.alicdn.com/t/font_1003828_d9kgu7vmhrm.svg#iconfont') format('svg');
 }
+<<<<<<< HEAD
 <<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
 =======
 >>>>>>> path:完成sessionStorage和一些列表的页面和样式
 =======
 >>>>>>> feat:实现了列表页面和详情页面
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
 .iconfont {
   font-family: "iconfont" !important;
   font-size: 9vw;
@@ -387,10 +422,13 @@ input {
 .changecolor {
   color: red;
 }
+<<<<<<< HEAD
 <<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
 <<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
 =======
 >>>>>>> feat:实现了列表页面和详情页面
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
 .products{
     display: flex;
     justify-content: flex-start;
@@ -440,10 +478,13 @@ input {
     }
 
 }
+<<<<<<< HEAD
 <<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
 =======
 >>>>>>> path:完成sessionStorage和一些列表的页面和样式
 =======
 >>>>>>> feat:实现了列表页面和详情页面
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
 </style>
 

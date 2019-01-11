@@ -4,6 +4,14 @@ import { Indicator, Toast } from 'mint-ui'
 const ajax = axios.create({
   baseURL: 'http://rap2api.taobao.org/app/mock'
 })
+// const tbajax = axios.create({
+//   baseURL:'https://suggest.taobao.com'
+// })
+// tbajax.interceptors.request.use(config => {
+//   Indicator.open('加载中...')
+//   config.headers('Access-Control-Allow-Origin', '*');
+//   return config
+// })
 //拦截器
 ajax.interceptors.request.use(config => {
   Indicator.open('加载中...')
