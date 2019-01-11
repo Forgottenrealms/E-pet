@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 import Products from '@/components/categoryChildren/productType' 
 import Logo from '@/components/categoryChildren/logo'
@@ -9,18 +8,8 @@ import Detail from '@/components/categoryChildren/newListPageChildren/detail'
 import Details from '@/components/categoryChildren/newListPageChildren/details'
 import DetailProduct from '@/components/categoryChildren/newListPageChildren/detailproduct'
 import DetailIssues from '@/components/categoryChildren/newListPageChildren/detailissues'
-=======
-// import Home from '@/pages/Home'
-// import Category from '@/pages/Category'
-// import League from '@/pages/League'
-// import Cart from '@/pages/Cart'
-// import Mine from '@/pages/Mine'
-import Products from '@/components/categoryChildren/productType' 
-import Logo from '@/components/categoryChildren/logo'
-import ProductList from '@/components/categoryChildren/product'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
->>>>>>> 48a0f26c8a5127015311fc04a5043b83a0698f74
 
 const Home = () => import('@/pages/Home')
 const Category = () => import('@/pages/Category')
@@ -31,13 +20,6 @@ const Mine = () => import('@/pages/Mine')
 import Tabbar from '@/components/Tabbar'
 import Search from '@/components/search'
 
-<<<<<<< HEAD
-const Home = () => import('@/pages/Home')
-const Category = () => import('@/pages/Category')
-const Cart = () => import('@/pages/Cart')
-const Mine = () => import('@/pages/Mine')
-const League  = () => import('@/pages/League')
-=======
 import HomeIndex from '@/components/home/HomeIndex'
 import Bag from '@/components/home/Bag'
 import Kennel from '@/components/home/Kennel'
@@ -48,7 +30,6 @@ import Toy from '@/components/home/Toy'
 import Sick from '@/components/home/Sick'
 import Worm from '@/components/home/Worm'
 import Technology from '@/components/home/Technology'
->>>>>>> 48a0f26c8a5127015311fc04a5043b83a0698f74
 
 const routes = [{
   path: '/',
@@ -221,7 +202,6 @@ redirect: '/category/productType'
     default: Search,
     tabbar: Tabbar,
   }
-<<<<<<< HEAD
 },
 {
   path:'/newlistpage',
@@ -285,7 +265,6 @@ redirect: '/category/productType'
   },
 ],
 redirect: '/detail/detailproduct'
-=======
 },{
   path: '/login',
   name: 'login',
@@ -304,7 +283,6 @@ redirect: '/detail/detailproduct'
   components: {
     default: Register,
   }
->>>>>>> 48a0f26c8a5127015311fc04a5043b83a0698f74
 }
 ];
 
