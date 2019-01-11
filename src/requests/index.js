@@ -4,6 +4,14 @@ import { Indicator, Toast } from 'mint-ui'
 const ajax = axios.create({
   baseURL: 'http://rap2api.taobao.org/app/mock'
 })
+// const tbajax = axios.create({
+//   baseURL:'https://suggest.taobao.com'
+// })
+// tbajax.interceptors.request.use(config => {
+//   Indicator.open('加载中...')
+//   config.headers('Access-Control-Allow-Origin', '*');
+//   return config
+// })
 //拦截器
 ajax.interceptors.request.use(config => {
   Indicator.open('加载中...')
@@ -27,11 +35,20 @@ ajax.interceptors.response.use(resp => {
 export const getCateNav = () => {
   return ajax.get('/123613/api/productlist/a')
 }
-// export const getListData = (cateID) => {
-//   return ajax.get(`/123613/api/productlist/b/${cateID}`)
-// }
 export const getListData = () => {
-  return ajax.get(`/123613/api/productlist/b/`)
+  return ajax.get(`/123613/api/productlist/b`)
+}
+//热门搜索
+export const getHostSearch = () => {
+  return ajax.get(`/123613/api/productlist/c`)
+}
+//商品列表
+export const listProduct = () =>{
+  return ajax.get('123613/api/productlist/d')
+}
+//商品详情的增值业务
+export const matchProduct = () =>{
+  return ajax.get('123613/api/productlist/e')
 }
 
 // 轮播图接口
@@ -48,6 +65,9 @@ export const getNavList = () => {
 export const getActivityImg = () => {
   return ajax.get('/123501/api/home/activity')
 }
+// export const getSearchData = (word) =>{
+//   return tbajax.get(`/sug?code=utf-8&q=${word}&callback=?`);
+// }
 
 // 加载更多接口
 export const getLoadMore = () => {
