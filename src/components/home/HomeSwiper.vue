@@ -2,7 +2,7 @@
   <div class="epet-home-swiper swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide" v-for="item in swiper" :key="item.id">
-        <img :src="item.img" alt>
+        <img :src="item.img">
       </div>
     </div>
     <!-- 如果需要分页器 -->

@@ -1,5 +1,10 @@
 <template>
-    <div class="epet-home-search">
+    <div 
+        :class="{
+            'epet-home-search': true,
+            'scroll-to-top': this.$store.state.isScrollTop
+        }" 
+    >
         <input type="text" id="search" name="search" placeholder="请输入搜索内容">
         <span class="icon">&#xe666;</span>
         <span class="message">&#xe601;</span>
@@ -21,21 +26,34 @@ export default {
 /* icon图标 */
 @font-face {
   font-family: 'iconfont';  /* project id 1004392 */
-  src: url('//at.alicdn.com/t/font_1004392_ew13r5ch9wr.eot');
-  src: url('//at.alicdn.com/t/font_1004392_ew13r5ch9wr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1004392_ew13r5ch9wr.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1004392_ew13r5ch9wr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1004392_ew13r5ch9wr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1004392_ew13r5ch9wr.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_1004392_xtscev5os6o.eot');
+  src: url('//at.alicdn.com/t/font_1004392_xtscev5os6o.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1004392_xtscev5os6o.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1004392_xtscev5os6o.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1004392_xtscev5os6o.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1004392_xtscev5os6o.svg#iconfont') format('svg');
+}
+</style>
+
+<style lang="scss">
+.scroll-to-top {
+    background: #fff;
+
+    #search {
+        background: rgb(231, 231, 231);
+    }
+    .message {
+        color: #000 !important;
+    }
 }
 </style>
 
 <style lang="scss">
 .epet-home-search {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 7.41vw;
-    z-index: 1;
+    z-index: 99;
     top: 0;
     left: 0;
 

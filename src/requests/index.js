@@ -68,3 +68,8 @@ export const getActivityImg = () => {
 // export const getSearchData = (word) =>{
 //   return tbajax.get(`/sug?code=utf-8&q=${word}&callback=?`);
 // }
+
+// 加载更多接口
+export const getLoadMore = () => {
+  return ajax.get('/123501/api/home/loadmore')
+}

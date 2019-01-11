@@ -6,16 +6,19 @@ import 'mint-ui/lib/style.css';
 
 import App from './App';
 import router from './router';
+import store from './store';
 import * as $http from './requests';
 
 Vue.config.productionTip = false;
 Vue.prototype.$http = $http;
+
 Vue.use(MintUI)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>',
 });
