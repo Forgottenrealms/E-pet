@@ -16,7 +16,14 @@ import Logo from '@/components/categoryChildren/logo'
 import ProductList from '@/components/categoryChildren/product'
 import newListPage from '@/components/categoryChildren/newListPage'
 import selectList from '@/components/categoryChildren/newListPageChildren/selectList'
+<<<<<<< 1b6a5cddcc6e059c4c861845bddfcc0a91d0294f
 >>>>>>> path:完成sessionStorage和一些列表的页面和样式
+=======
+import Detail from '@/components/categoryChildren/newListPageChildren/detail'
+import Details from '@/components/categoryChildren/newListPageChildren/details'
+import DetailProduct from '@/components/categoryChildren/newListPageChildren/detailproduct'
+import DetailIssues from '@/components/categoryChildren/newListPageChildren/detailissues'
+>>>>>>> feat:实现了列表页面和详情页面
 
 const Home = () => import('@/pages/Home')
 const Category = () => import('@/pages/Category')
@@ -252,13 +259,58 @@ redirect: '/category/productType'
     path:'selectlist',
     name:'selectlist',
     meta:{
-      title:['默认排序','按人气','最新上架','按评论']
     },
     components:{
       default:selectList
     }
   }]
+<<<<<<< 1b6a5cddcc6e059c4c861845bddfcc0a91d0294f
 >>>>>>> path:完成sessionStorage和一些列表的页面和样式
+=======
+},
+{
+  path:'/detail',
+  name:'detail',
+  meta:{
+  isNav:false,
+  },
+  components:{
+    default:Detail,
+  },
+  children:[
+    {
+    path:'detailproduct',
+    name:'detailproduct',
+    meta:{  
+      title:'商品'  
+    },
+    components:{
+      default:DetailProduct
+    }
+  },
+    {
+    path:'details',
+    name:'details',
+    meta:{  
+      title:'详情'  
+    },
+    components:{
+      default:Details
+    }
+  },
+    {
+    path:'detailissues',
+    name:'detailissues',
+    meta:{  
+      title:'评价'  
+    },
+    components:{
+      default:DetailIssues
+    }
+  },
+],
+redirect: '/detail/detailproduct'
+>>>>>>> feat:实现了列表页面和详情页面
 }
 ];
 
