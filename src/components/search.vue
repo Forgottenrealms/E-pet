@@ -8,6 +8,12 @@
         <i class="search_logo">&#xe600;</i>
         <div class="hot-search">
           <p class="hot-search-header">热门搜索</p>
+          <div class="host-search-title">
+            <span v-for="item in hotList" :key="item.id" class="span-title">{{item.title}}</span>
+          </div>
+        </div>
+        <div class="recentlyHistory">
+          <p>最近搜索</p>
         </div>
     </div>
 </template>
@@ -16,14 +22,21 @@ export default {
   name: "Search",
   data() {
     return {
+      hotList:[]
     };
   },
   created(){
-    console.log(this.$http);
+    this.$http.getHostSearch().then(resp=>{
+     this.hotList=resp;
+    })
+  },
+  beforeMount(){
+    this.$http.getSearchData("a").then(resp=>{
+      console.log(resp);
+    })
   }
   };
 </script>
-
 <style lang="scss">
 .search {
   height: 100%;
@@ -89,14 +102,38 @@ input {
 }
 .hot-search {
   width: 100%;
-  height: 40vw;
+  min-height: 40vw;
   padding-top: 3vw;
   border-bottom: 0.2vw solid #dedede;
 }
 .hot-search-header {
-  font-size: 3.5vw;
-  font-weight: bold;
+  font-size: 4vw;
 }
+.host-search-title{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top:2vw;
+ 
+}
+ .span-title{
+   /* min-width: 20%; */
+  padding:0 2vw;
+  height: 8vw;
+  line-height: 8vw;
+  text-align: center;
+  margin:1vw;
+  
+  border:.2vw solid #dedede;
+  border-radius: 2vw;
+ }
+ .recentlyHistory{
+   min-height:8vw;
+   border-bottom: .2vw solid #dedeed;
+   line-height: 8vw;
+   font-size: 4vw;
+ }
+
 </style>
 
 

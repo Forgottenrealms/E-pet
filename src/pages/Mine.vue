@@ -8,10 +8,9 @@
             <div class="person">
                 <div class="picture"><img src=""/></div>
                 <p>
-                    <!-- <router-link :to="">登录</router-link> -->
-                    <a href="">登录</a>
+                    <router-link to="/login" tag="a">登录</router-link> 
                     <span>|</span>
-                    <a href="">注册</a>
+                    <router-link to="/register" tag="a">注册</router-link> 
                 </p>
                 
             </div>
