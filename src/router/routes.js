@@ -1,4 +1,6 @@
 <<<<<<< HEAD
+<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
+<<<<<<< HEAD
 
 import Products from '@/components/categoryChildren/productType' 
 import Logo from '@/components/categoryChildren/logo'
@@ -10,6 +12,12 @@ import Details from '@/components/categoryChildren/newListPageChildren/details'
 import DetailProduct from '@/components/categoryChildren/newListPageChildren/detailproduct'
 import DetailIssues from '@/components/categoryChildren/newListPageChildren/detailissues'
 =======
+=======
+<<<<<<< 48a0f26c8a5127015311fc04a5043b83a0698f74
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
+=======
+<<<<<<< 48a0f26c8a5127015311fc04a5043b83a0698f74
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
 // import Home from '@/pages/Home'
 // import Category from '@/pages/Category'
 // import League from '@/pages/League'
@@ -20,7 +28,37 @@ import Logo from '@/components/categoryChildren/logo'
 import ProductList from '@/components/categoryChildren/product'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
+<<<<<<< HEAD
+<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
 >>>>>>> 48a0f26c8a5127015311fc04a5043b83a0698f74
+=======
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
+=======
+
+import Products from '@/components/categoryChildren/productType' 
+import Logo from '@/components/categoryChildren/logo'
+import ProductList from '@/components/categoryChildren/product'
+import newListPage from '@/components/categoryChildren/newListPage'
+import selectList from '@/components/categoryChildren/newListPageChildren/selectList'
+<<<<<<< 1b6a5cddcc6e059c4c861845bddfcc0a91d0294f
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
+<<<<<<< HEAD
+<<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
+=======
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
+=======
+import Detail from '@/components/categoryChildren/newListPageChildren/detail'
+import Details from '@/components/categoryChildren/newListPageChildren/details'
+import DetailProduct from '@/components/categoryChildren/newListPageChildren/detailproduct'
+import DetailIssues from '@/components/categoryChildren/newListPageChildren/detailissues'
+>>>>>>> feat:实现了列表页面和详情页面
+<<<<<<< HEAD
+>>>>>>> feat:实现了列表页面和详情页面
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
 
 const Home = () => import('@/pages/Home')
 const Category = () => import('@/pages/Category')
@@ -32,12 +70,20 @@ import Tabbar from '@/components/Tabbar'
 import Search from '@/components/search'
 
 <<<<<<< HEAD
+<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
+<<<<<<< HEAD
 const Home = () => import('@/pages/Home')
 const Category = () => import('@/pages/Category')
 const Cart = () => import('@/pages/Cart')
 const Mine = () => import('@/pages/Mine')
 const League  = () => import('@/pages/League')
 =======
+=======
+<<<<<<< 48a0f26c8a5127015311fc04a5043b83a0698f74
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
+=======
+<<<<<<< 48a0f26c8a5127015311fc04a5043b83a0698f74
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
 import HomeIndex from '@/components/home/HomeIndex'
 import Bag from '@/components/home/Bag'
 import Kennel from '@/components/home/Kennel'
@@ -48,7 +94,23 @@ import Toy from '@/components/home/Toy'
 import Sick from '@/components/home/Sick'
 import Worm from '@/components/home/Worm'
 import Technology from '@/components/home/Technology'
+<<<<<<< HEAD
+<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
 >>>>>>> 48a0f26c8a5127015311fc04a5043b83a0698f74
+=======
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
+=======
+const Home = () => import('@/pages/Home')
+const Category = () => import('@/pages/Category')
+const Cart = () => import('@/pages/Cart')
+const Mine = () => import('@/pages/Mine')
+const League  = () => import('@/pages/League')
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
+<<<<<<< HEAD
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
 
 const routes = [{
   path: '/',
@@ -222,6 +284,8 @@ redirect: '/category/productType'
     tabbar: Tabbar,
   }
 <<<<<<< HEAD
+<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
+<<<<<<< HEAD
 },
 {
   path:'/newlistpage',
@@ -286,6 +350,12 @@ redirect: '/category/productType'
 ],
 redirect: '/detail/detailproduct'
 =======
+=======
+<<<<<<< 48a0f26c8a5127015311fc04a5043b83a0698f74
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
+=======
+<<<<<<< 48a0f26c8a5127015311fc04a5043b83a0698f74
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
 },{
   path: '/login',
   name: 'login',
@@ -304,7 +374,90 @@ redirect: '/detail/detailproduct'
   components: {
     default: Register,
   }
+<<<<<<< HEAD
+<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
 >>>>>>> 48a0f26c8a5127015311fc04a5043b83a0698f74
+=======
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
+=======
+},
+{
+  path:'/newlistpage',
+  name:'newlistpage',
+  meta:{
+    isNav:false,
+  },
+  components:{
+    default:newListPage,
+    // tabbar: Tabbar,
+  },
+  children:[{
+    path:'selectlist',
+    name:'selectlist',
+    meta:{
+    },
+    components:{
+      default:selectList
+    }
+  }]
+<<<<<<< 1b6a5cddcc6e059c4c861845bddfcc0a91d0294f
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
+<<<<<<< HEAD
+<<<<<<< 6967a3cc909a087915cfafe7218d27ca913ca978
+>>>>>>> path:完成sessionStorage和一些列表的页面和样式
+=======
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
+=======
+},
+{
+  path:'/detail',
+  name:'detail',
+  meta:{
+  isNav:false,
+  },
+  components:{
+    default:Detail,
+  },
+  children:[
+    {
+    path:'detailproduct',
+    name:'detailproduct',
+    meta:{  
+      title:'商品'  
+    },
+    components:{
+      default:DetailProduct
+    }
+  },
+    {
+    path:'details',
+    name:'details',
+    meta:{  
+      title:'详情'  
+    },
+    components:{
+      default:Details
+    }
+  },
+    {
+    path:'detailissues',
+    name:'detailissues',
+    meta:{  
+      title:'评价'  
+    },
+    components:{
+      default:DetailIssues
+    }
+  },
+],
+redirect: '/detail/detailproduct'
+>>>>>>> feat:实现了列表页面和详情页面
+<<<<<<< HEAD
+>>>>>>> feat:实现了列表页面和详情页面
+=======
+>>>>>>> 5a3ea1ad74b96c321783df2a4fea50d1964c0581
 }
 ];
 
