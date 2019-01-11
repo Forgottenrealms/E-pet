@@ -187,7 +187,7 @@ export default {
         background: #fff;
 
         img {
-          width: 100%;
+          // width: 100%;
           height: 69.44vw;
         }
       }
@@ -225,6 +225,9 @@ export default {
           height: 10.93vw;
           border-radius: 45%;
           margin-bottom: 2vw;
+        }
+        .activity-text {
+          font-size: 1.5vw;
         }
       }
     }

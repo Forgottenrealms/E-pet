@@ -3,10 +3,10 @@
         <router-link class="btn-back" to="/mine" tag="p">&lt;</router-link>
         <p class="fast-regster">快速注册</p>
         <form class="form-redister">
-            <input type="text" name="telephine" placeholder="请输入手机号"><br/>
-            <input type="text" name="telephine" placeholder="请输入验证码"><br/>
-            <input type="password" name="telephine" placeholder="请输入密码"><br/>
-            <input type="button" class="btn-next" value="下一步">
+            <input type="text" name="telephine" id="phone" placeholder="请输入手机号"><br/>
+            <input type="text" name="telephine" id="yanzhengma" placeholder="请输入验证码"><br/>
+            <input type="password" name="telephine" id="pwd" placeholder="请输入密码"><br/>
+            <input type="button" class="btn-next" value="注册" @click="registerHandle">
             <a href="">获取验证码</a>
         </form>
         <p class="prompt">点击“下一步”，即表示您阅读并同意<a>《E宠商城用户协议》</a></p>
@@ -15,7 +15,24 @@
 
 <script>
 export default {
-
+    name: 'Register',
+    data() {
+        return {
+            isInputEmpty: true,  // 判断用户是否输入完毕
+            userMessage: {}
+        }
+    },
+    methods: {
+        registerHandle() {
+            if ( document.getElementById("phone").value != "" && document.getElementById("pwd").value != "" && document.getElementById("yanzhengma").value != "") {
+                // console.log("不为空")
+                this.userMessage.phone = document.getElementById("phone").value;
+                this.userMessage.pwd = document.getElementById("pwd").value;
+                window.localStorage.setItem('epet-user-register', JSON.stringify(this.userMessage));
+                this.$router.push("/login");
+            }
+        }
+    }
 }
 </script>
 
@@ -50,10 +67,10 @@ export default {
             outline: none;
         }
         .btn-next{
-            background: #f0f0f0;
+            background: #ff4d19;
             border: none;
             border-radius: 8.88vw;
-            color: #9a9a9a;
+            color: #fff;
         }
         a{
             display: block;

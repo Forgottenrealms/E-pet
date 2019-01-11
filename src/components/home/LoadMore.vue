@@ -4,7 +4,7 @@
       <img :src="item.imgs">
       <p>{{item.disc}}</p>
       <div class="price-cart">
-        <b>￥<span>{{item.price}}</span></b>
+        <b>￥<span>{{item.price | tofix}}</span></b>
         <span class="cart" v-html="icon"></span>
       </div>
     </div>
@@ -65,7 +65,7 @@ export default {
     img {
       width: 39.8vw;
       height: 43.33vw;
-      background: gold;
+      background: #999;
     }
     p {
       font-size: 3.33vw;

@@ -92,7 +92,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #f2f2f2;
+  background: #fff;
 
   .epet {
     &-main {

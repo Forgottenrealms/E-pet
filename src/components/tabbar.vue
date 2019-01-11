@@ -40,14 +40,13 @@ export default {
 <style lang="scss">
 /* tabbar icon图标 */
 @font-face {
-  font-family: "iconfont"; /* project id 1001667 */
-  src: url("//at.alicdn.com/t/font_1001667_fg9ntnvmqw.eot");
-  src: url("//at.alicdn.com/t/font_1001667_fg9ntnvmqw.eot?#iefix")
-      format("embedded-opentype"),
-    url("//at.alicdn.com/t/font_1001667_fg9ntnvmqw.woff2") format("woff2"),
-    url("//at.alicdn.com/t/font_1001667_fg9ntnvmqw.woff") format("woff"),
-    url("//at.alicdn.com/t/font_1001667_fg9ntnvmqw.ttf") format("truetype"),
-    url("//at.alicdn.com/t/font_1001667_fg9ntnvmqw.svg#iconfont") format("svg");
+  font-family: 'iconfont';  /* project id 1001667 */
+  src: url('//at.alicdn.com/t/font_1001667_32ssgh8ps2o.eot');
+  src: url('//at.alicdn.com/t/font_1001667_32ssgh8ps2o.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1001667_32ssgh8ps2o.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1001667_32ssgh8ps2o.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1001667_32ssgh8ps2o.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1001667_32ssgh8ps2o.svg#iconfont') format('svg');
 }
 
 .epet-tabbar {
