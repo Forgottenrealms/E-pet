@@ -4,29 +4,9 @@ import { Indicator, Toast } from 'mint-ui'
 const ajax = axios.create({
   baseURL: 'http://rap2api.taobao.org/app/mock'
 })
-<<<<<<< 2d44e6200b5475c8cac66865b31ae2db25e5c778
-// const tbajax = axios.create({
-//   baseURL:'https://suggest.taobao.com'
-// })
-// tbajax.interceptors.request.use(config => {
-//   Indicator.open('加载中...')
-//   config.headers('Access-Control-Allow-Origin', '*');
-//   return config
-// })
-=======
-const tbajax = axios.create({
-  baseURL:'https://suggest.taobao.com'
-})
-tbajax.interceptors.request.use(config => {
-  Indicator.open('加载中...')
-  config.headers('Access-Control-Allow-Origin', '*');
-  return config
-})
->>>>>>> path:完成sessionStorage和一些列表的页面和样式
 //拦截器
 ajax.interceptors.request.use(config => {
   Indicator.open('加载中...')
-  console.log(config);
   return config
 })
 
