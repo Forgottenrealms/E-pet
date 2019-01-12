@@ -87,7 +87,11 @@ export default {
     },
     showthislist2() {
       this.count2++;
-      //    console.log(this.$route.path==="/newlistpage/selectlist");
+      // console.log(this.productList);
+      //实现销量排序的功能
+      this.productList.forEach(obj=>{
+        console.log(obj.personNumber);
+      })
       if (this.$route.path === "/newlistpage/selectlist") {
         this.$router.push("/newlistpage");
       }
