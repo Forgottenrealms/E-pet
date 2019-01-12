@@ -21,12 +21,6 @@ export default {
   name: "Category",
   data(){
     return {
-      a:{
-        b:1,
-      },
-      b:{
-        c:1,
-      }
     }
   }
 };

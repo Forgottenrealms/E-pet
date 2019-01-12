@@ -23,12 +23,12 @@
                     <div class="product1">
                         <span class="img"><img class="img1" :src="matchProdcut[0].match[0].matchImg"/></span>
                         <span class="prices">￥{{matchProdcut[0].match[0].matchPrice}}</span>
-                        <span class="save-money">省￥{{matchProdcut[0].match[0].matchPrice}}</span>
+                        <span class="save-money">省￥{{matchProdcut[0].match[0].saveMoney}}</span>
                     </div>
                       <div class="product1">
                         <span class="img"><img class="img1" :src="matchProdcut[0].match[1].matchImg"/></span>
                         <span class="prices">￥{{matchProdcut[0].match[1].matchPrice}}</span>
-                        <span class="save-money">省￥{{matchProdcut[0].match[1].matchPrice}}</span>
+                        <span class="save-money">省￥{{matchProdcut[0].match[1].saveMoney}}</span>
                     </div>
                 </div>
             </div>
@@ -60,11 +60,38 @@
              <div class="people-issues">
                <div class="people-issues-header">
                  <div class="people-issues-left">
-                     <span class="iconfont people-issues-left-issues">&#xe63e;</span>宠友评价<b></b>
+                     <span class="iconfont people-issues-left-issues">&#xe63e;</span>宠友评价<b>({{commentAmount}})</b>
                  </div>
                  <div class="people-issues-right">
+                   <span>好评率{{products[0].issues}}%</span>
+                   <span class="iconfont goto">&#xe627;</span>
                  </div>                                 
                </div>
+                <ul class="people-issues-body">
+                  <router-link to="/detail/detailissues/commentall" v-for="item in comments" :key="item.username" tag="li">
+                    <div class="li-left">
+                      <img :src="item.logoImg" class="li-left-img"/>
+                    </div>
+                    <div class="li-right">
+                      <p class="li-right-header">
+                        <span>{{item.username}}</span>
+                        <span class="star">{{item.star}}</span>
+                      </p>
+                      <p class="li-right-center">
+                        <span>加入E宠{{item.date}}天</span>
+                        <span class="v-level">V{{item.level}}</span>
+                      </p>
+                      <p class="li-right-bottom">
+                        <span>{{item.comment}}</span>
+                      </p>
+                    </div>
+
+                  </router-link>
+                </ul>
+                <div class="people-issues-bottom">
+                  <span @click="gotoDetail">查看全部评价</span>
+                  <span>查看购买咨询</span>
+                </div>
              </div>
         </div>
     </div>
@@ -77,7 +104,9 @@ export default {
   data() {
     return {
       products: [],
-      matchProdcut: []
+      matchProdcut: [],
+      comments: [],
+      commentAmount: 22
     };
   },
   components: {
@@ -86,7 +115,7 @@ export default {
   beforeRouteEnter(to, from, next) {
     next(vm => {
       vm.getdata();
-      // vm.getMatchProduct();
+      // vm.getdetail();
     });
   },
   mounted() {
@@ -103,6 +132,7 @@ export default {
         // console.log(this.$route.params.products[0].id);
         //将访问的商品的详情的输出传送过来
         this.getMatchProduct();
+        this.getComments();
         this.products = this.$route.params.products;
         window.sessionStorage.setItem(
           "get-product-detail",
@@ -115,19 +145,38 @@ export default {
         this.matchProdcut = JSON.parse(
           window.sessionStorage.getItem("get-product-match-detail")
         );
+        this.commentAmount = JSON.parse(
+          window.sessionStorage.getItem("get-detail-comment")
+        ).length;
+        this.comments = JSON.parse(
+          window.sessionStorage.getItem("get-detail-comment")
+        ).slice(0, 3);
       }
     },
     getMatchProduct() {
       console.log("调用了");
       this.$http.matchProduct().then(resp => {
-        console.log(resp);
         this.matchProdcut = resp;
         window.sessionStorage.setItem(
           "get-product-match-detail",
           JSON.stringify(resp)
         );
       });
-    }
+    },
+    getComments() {
+      this.$http.getCommentData().then(resp => {
+        this.commentAmount = resp.length;
+        this.comments = resp.slice(0, 3);
+        console.log(this.comments);
+        window.sessionStorage.setItem(
+          "get-detail-comment",
+          JSON.stringify(resp)
+        );
+      });
+    },
+    gotoDetail() {
+      this.$router.push("/detail/detailissues/commentall");
+    },
   }
 };
 </script>
@@ -145,7 +194,7 @@ export default {
 }
 .detailproduct {
   height: auto;
-  background:white;
+  background: white;
 }
 .showthisproduct {
   display: flex;
@@ -225,9 +274,9 @@ export default {
         .img {
           width: 15vw;
           height: 20vw;
-          .img1{
-            width:100%;
-            height:100%;
+          .img1 {
+            width: 15vw;
+            height: 20vw;
           }
         }
         .prices {
@@ -237,7 +286,7 @@ export default {
         .save-money {
           padding: 0;
           color: orangered;
-          font-size:12px;
+          font-size: 12px;
           background: orange;
           border-radius: 1vw;
         }
@@ -248,6 +297,11 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 2vw 0;
+    span {
+      &:last-child {
+        padding-right: 1vw;
+      }
+    }
   }
   .jiange {
     height: 1vw;
@@ -283,12 +337,76 @@ export default {
     justify-content: space-between;
     padding: 2vw;
   }
-  .people-issues{
-     height:100vw;
-    // &-header{
-    //   height:4vw;
-    //   border-bottom:1px solid #dedede;
-    // }
+  .people-issues {
+    height: 100vw;
+    &-header {
+      height: 6vw;
+      line-height: 6vw;
+      border-bottom: 1px solid #dedede;
+      display: flex;
+      justify-content: space-between;
+    }
+    &-right {
+      span {
+        &:last-child {
+          color: #dedede;
+        }
+      }
+    }
+  }
+  .people-issues-body {
+    li {
+      display: flex;
+      justify-content: flex-start;
+      height: 10vw;
+      border-bottom: 1px solid #dedede;
+      padding: 3vw 0;
+    }
+    .li-left {
+      width: 5vw;
+      padding-right: 4vw;
+    }
+    .li-left-img {
+      width: 6vw;
+      height: 6vw;
+      border-radius: 50%;
+    }
+    .li-right {
+      flex: 1;
+      &-header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        .star {
+          color: red;
+        }
+      }
+      &-center {
+        display: flex;
+        justify-content: space-between;
+        padding: 1vw 0;
+        .v-level {
+          color: red;
+          padding-right: 2vw;
+        }
+      }
+    }
+  }
+  .people-issues-bottom {
+    display: flex;
+    height: 10vw;
+    justify-content: center;
+    align-items: center;
+    span {
+      display: inline-block;
+      width: 30vw;
+      margin-left: 4vw;
+      text-align: center;
+      height: 8vw;
+      line-height: 8vw;
+      border: 1px solid red;
+      color: red;
+    }
   }
 }
 </style>

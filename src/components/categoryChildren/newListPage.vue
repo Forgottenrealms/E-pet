@@ -49,7 +49,7 @@
         v-for="item in productList"
         :key="item.id"
         class="products"
-        @touchstart="toDetail(item.id)"
+        @click="toDetail(item.id)"
       >
         <div class="img">
           <img :src="item.img">
@@ -60,7 +60,7 @@
           <div class="product-right-bottom">
             <div class="good-issues">互动:({{item.issues}}%好评)</div>
             <div class="sale-amount">售出:{{item.personNumber}}</div>
-            <span class="shop-cart">&#xe643;</span>
+            <span class="shop-cart" @click.stop="AddCarts">&#xe643;</span>
           </div>
         </div>
       </div>
@@ -121,6 +121,9 @@ export default {
           id
         }
       });
+    },
+    AddCarts(){
+      console.log("阻止了");
     }
   },
   beforeRouteEnter(to, from, next) {
@@ -207,6 +210,7 @@ input {
 }
 .listnav {
   height: 13.47vw;
+  width:100%;
   border-bottom: 0.1vw solid #dedede;
   .fournav {
     height: 100%;
@@ -216,6 +220,9 @@ input {
     align-items: center;
     .filter-product {
       font-family: "iconfont";
+      display: inline-block;
+      height:3vw;
+      width:3vw;
       font-size: 5.2vw;
     }
     li:nth-child(3) {
@@ -296,6 +303,7 @@ input {
     }
   }
   .product-right {
+    flex:1;
     color: #4f4f4f;
     font-size: 3.2vw;
     padding-left: 2vw;
