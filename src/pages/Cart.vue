@@ -34,7 +34,6 @@
                             <input type="button" value="+">
                     </div>
                 </div>
-<<<<<<< HEAD
             </div>
             <div class="cartItem">
                 <input type="checkbox">
@@ -50,8 +49,6 @@
                         <input type="text" value="+">
                     </div>
                 </div>
-=======
->>>>>>> d8a7547a90bdc5b9bf78524d457378968137b8dc
             </div>
         </div>
   
@@ -109,7 +106,6 @@ export default {
       font-size: 3.7vw;
       text-align: center;
       margin-top: 90.88vw;
-<<<<<<< HEAD
     }
     .go-to-buy {
       width: 30.92vw;
@@ -122,20 +118,6 @@ export default {
       border-radius: 10vw;
       margin: 6vw auto;
     }
-=======
-    }
-    .go-to-buy {
-      width: 30.92vw;
-      height: 10vw;
-      line-height: 10vw;
-      text-align: center;
-      font-size: 2.96vw;
-      color: red;
-      border: 1px solid red;
-      border-radius: 10vw;
-      margin: 6vw auto;
-    }
->>>>>>> d8a7547a90bdc5b9bf78524d457378968137b8dc
   }
   // 当购物车不为空的时候
   .content {
