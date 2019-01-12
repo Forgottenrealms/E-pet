@@ -12,6 +12,7 @@
         {{item.title}}
       </div>
     </div>
+    <div class="product"></div>
   </div>
 </template>
 
@@ -73,7 +74,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     flex: 1;
-    // justify-content: space-around;
+    justify-content: space-between;
   }
   .product {
     width: 32%;

@@ -80,11 +80,10 @@
                     <span class="service-icon" v-html="item.meta.icon"></span>
                     <span>{{item.meta.title}}</span>
                 </li>
-                <li class="itemEmpty" v-for="item in service.length-2" :key="item.name"></li>
+                <li class="itemEmpty"></li>
+                <li class="itemEmpty"></li>
             </ul>
-            <!-- <ul>
-                <li v-for="item in service" :key="item.name">{{item.meta.title}}</li>
-            </ul> -->
+            
         </div>
     </div>
 </template>
@@ -385,7 +384,7 @@ export default {
             width: 100%;
             height: 20vw;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-wrap: wrap;
 
             li{
@@ -440,9 +439,6 @@ export default {
             }
             
         }
-        :nth-last-child(){
-                    justify-content: flex-start;
-                }
             
     }
 }
