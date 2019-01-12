@@ -77,9 +77,10 @@
             <h3>我的服务</h3>
             <ul>
                 <li v-for="item in service" :key="item.name">
-                    <span v-html="item.meta.icon"></span>
+                    <span class="service-icon" v-html="item.meta.icon"></span>
                     <span>{{item.meta.title}}</span>
                 </li>
+                <li class="itemEmpty" v-for="item in service.length-2" :key="item.name"></li>
             </ul>
             <!-- <ul>
                 <li v-for="item in service" :key="item.name">{{item.meta.title}}</li>
@@ -158,9 +159,10 @@ export default {
                         icon:'&#xe601;'
                     }
                 }
-            ]
+            ],
+            
         }
-    }
+    },
 }
 </script>
 
@@ -193,7 +195,7 @@ export default {
             padding: 4.16vw;
             font-family: 'iconfont';
             color: white;
-            font-size: 2.7vw;
+            font-size: 5.77vw;
             
             .icon-msg{
             float: right;
@@ -315,8 +317,11 @@ export default {
                 text-align: center;
                 flex-direction: column;
                 justify-content: space-between;
-
+                :nth-child(1) {
+                    font-size: 5.77vw;
+                }
             }
+            
         }
     }
     // 我的钱包
@@ -395,10 +400,49 @@ export default {
                 justify-content: flex-end;
 
                 :nth-child(1){
-                    margin-bottom: 3vw;
+                    margin-bottom: 4vw;
+                    font-size: 5.77vw;
                 }
             }
+            :nth-last-child(){
+                align-items: start;
+            }
+            li:nth-child(1) .service-icon{
+                color:#d687ab;
+            }
+            li:nth-child(2) .service-icon{
+                color:#9de7d5;
+            }
+            li:nth-child(3) .service-icon{
+                color:#ff5777;
+            }
+            li:nth-child(4) .service-icon{
+                color:#e36894;
+            }
+            li:nth-child(5) .service-icon{
+                color:#fd8275;
+            }
+            li:nth-child(6) .service-icon{
+                color:#ffd300;
+            }
+            li:nth-child(7) .service-icon{
+                color:#f08887;
+            }
+            li:nth-child(8) .service-icon{
+                color:#fb5e02;
+            }
+            li:nth-child(9) .service-icon{
+                color:#40d39b;
+            }
+            .itemEmpty{
+                width: 25%;
+                height: 0;
+            }
+            
         }
+        :nth-last-child(){
+                    justify-content: flex-start;
+                }
             
     }
 }

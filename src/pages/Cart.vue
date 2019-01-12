@@ -21,6 +21,21 @@
                 <input type="checkbox">
                 E宠西部中央仓
             </div>
+            <div class="cartItem">
+                <input type="checkbox">
+                <div class="itemImg">
+                    <div class="tip">还剩<span>3</span>个</div>
+                </div>
+                <div class="right">
+                    <p>我不知道取个什么标题我不知道取个什么标题</p>
+                    <span class="price">￥666.66</span>
+                    <div class="wrap-botton">
+                        <input type="text" value="-">
+                        <input type="text" value="1">
+                        <input type="text" value="+">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -38,7 +53,7 @@ export default {
     background-color: white;
     position: relative;
     .empty{
-        // display: none;
+        display: none;
         .empty-header{
             width: 94.81vw;
             height: 13.7vw;
@@ -82,7 +97,7 @@ export default {
     }
     // 当购物车不为空的时候
     .content{
-        display: none;
+        // display: none;
         .content-header{
             width: 94.81vw;
             height: 13.7vw;
@@ -114,7 +129,70 @@ export default {
                 margin: auto 0;
                 width: 6.11vw;
                 height: 6.11vw;
-                border-radius: 50%;
+                border-radius: 3vw;
+            }
+        }
+        .cartItem{
+            width: 94.81vw;
+            height: 34.62vw;
+            border-top:1px solid;
+            margin: 0 auto;
+            position: relative;
+            input{
+                 width: 6.11vw;
+                height: 6.11vw;
+                position: absolute;
+                top:40%;
+                left: 0;
+            }
+            .itemImg{
+                width: 23.15vw;
+                height: 23.15vw;
+                background: #cccccc;
+                position: absolute;
+                top: 5.90vw;
+                left: 8.70vw;
+                .tip{
+                    width: 23.15vw;
+                    height: 5.55vw;
+                    z-index: 3;
+                    background: rgba($color: #000000, $alpha: 0.4);
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    text-align: center;
+                    line-height: 5.55vw;
+                    border-radius: 0% 20% 20% 0;
+                }
+            }
+            .right{
+                width: 59.72vw;
+                height: 23.15vw;
+                position: absolute;
+                top: 5.90vw;
+                right: 0;
+            }
+            .price{
+                color: red;
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+            .wrap-botton{
+                width: 29.44vw;
+                height: 5.7vw;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                border: 1px solid;
+                input{
+                    text-align: center;
+                    line-height: 5.55vw;
+                    width: 9.5vw;
+                    height: 5.55vw;
+                    float: left;
+                }
             }
         }
     }
