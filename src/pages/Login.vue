@@ -28,19 +28,11 @@
 
   <div class="login">
     <router-link class="btn-close" to="/mine" tag="p">X</router-link>
-<<<<<<< HEAD
     <p class="login-title">用户登录</p>
-=======
-    <p class="login-title">账号密码登录</p>
->>>>>>> 5b1f5f9a3e90da069a38597f19d3ab596f3284db
     <form class="form-login">
       <input type="text" name="telephine" placeholder="请输入手机号" id="phone">
       <br>
-<<<<<<< HEAD
       <input type="text" name="telephine" placeholder="请输入密码" id="pwd">
-=======
-      <input type="text" name="telephine" placeholder="请输入密码">
->>>>>>> 5b1f5f9a3e90da069a38597f19d3ab596f3284db
       <br>
       <input type="button" class="btn-login" value="登录" @click="loginHandle">
       <!-- <a href>获取验证码</a> -->
@@ -80,7 +72,6 @@ export default {
       },
       userLogin: {}
     };
-<<<<<<< HEAD
   },
   computed: {
     ...mapState(["isLogin"])
@@ -108,8 +99,6 @@ export default {
               }
             })
     }
-=======
->>>>>>> 5b1f5f9a3e90da069a38597f19d3ab596f3284db
   }
 };
 </script>
