@@ -4,14 +4,6 @@ import { Indicator, Toast } from 'mint-ui'
 const ajax = axios.create({
   baseURL: 'http://rap2api.taobao.org/app/mock'
 })
-// const tbajax = axios.create({
-//   baseURL:'https://suggest.taobao.com'
-// })
-// tbajax.interceptors.request.use(config => {
-//   Indicator.open('加载中...')
-//   config.headers('Access-Control-Allow-Origin', '*');
-//   return config
-// })
 //拦截器
 ajax.interceptors.request.use(config => {
   Indicator.open('加载中...')
@@ -50,6 +42,13 @@ export const listProduct = () =>{
 export const matchProduct = () =>{
   return ajax.get('123613/api/productlist/e')
 }
+//用户评论接口
+export const getCommentData = () =>{
+  return ajax.get('/123613/api/productlist/g')
+}
+export const getDetails = () =>{
+  return ajax.get('/123613/api/productlist/h')
+}
 
 // 轮播图接口
 export const getSwiper = () => {
@@ -65,9 +64,6 @@ export const getNavList = () => {
 export const getActivityImg = () => {
   return ajax.get('/123501/api/home/activity')
 }
-// export const getSearchData = (word) =>{
-//   return tbajax.get(`/sug?code=utf-8&q=${word}&callback=?`);
-// }
 
 // 加载更多接口
 export const getLoadMore = () => {
