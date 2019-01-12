@@ -73,3 +73,13 @@ export const getActivityImg = () => {
 export const getLoadMore = () => {
   return ajax.get('/123501/api/home/loadmore')
 }
+
+// 用户登录接口
+export const postLogin = () => {
+  return ajax.post('/123501/api/login')
+}
+
+// 轮播图纯图片接口
+export const getSwiperImgs = () => {
+  return ajax.get('/123501/api/swiper')
+}
