@@ -1,15 +1,23 @@
 <template>
-    <div class="toy">
-        玩具城
-    </div>
+  <div class="toy">
+      <home-swiper></home-swiper>
+      玩具城
+    <load-more></load-more>
+  </div>
 </template>
 
 <script>
-export default {
+import LoadMore from "./LoadMore";
+import HomeSwiper from "./HomeSwiper";
 
-}
+export default {
+  name: "Toy",
+  components: {
+    loadMore: LoadMore,
+    homeSwiper: HomeSwiper
+  }
+};
 </script>
 
 <style>
-
 </style>

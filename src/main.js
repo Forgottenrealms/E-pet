@@ -6,16 +6,29 @@ import 'mint-ui/lib/style.css';
 
 import App from './App';
 import router from './router';
+import store from './store';
 import * as $http from './requests';
 
 Vue.config.productionTip = false;
 Vue.prototype.$http = $http;
+
+const appMixin = {
+  filters: {
+    tofix (val) {
+      return val.toFixed(2);
+    }
+  }
+}
+
 Vue.use(MintUI)
+
+Vue.mixin(appMixin)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>',
 });

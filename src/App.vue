@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="app">
-    <div class="epet-main">
+    <div class="epet-main" ref="Main">
       <router-view name="homeNav"></router-view>
       <router-view></router-view>
     </div>
@@ -11,7 +11,27 @@
 </template>
 
 <script>
-export default {};
+import {
+  mapMutations
+} from 'vuex'
+export default {
+  name: 'App',
+  mounted() {
+    this.main = this.$refs.Main;
+    this.main.addEventListener("scroll", () => {
+      // console.log(this.main.scrollTop.toString())
+      // if (this.main.scrollTop.toString() >= 120 ) {
+      //   this.$store.state.isScrollTop = true;
+      // } else {
+      //   this.$store.state.isScrollTop = false;
+      // }
+      this.handleScroll(this.main.scrollTop.toString())
+    })
+  },
+  methods: {
+    ...mapMutations(['handleScroll'])
+  }
+};
 </script>
 
 <style lang="scss">
@@ -72,7 +92,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #f2f2f2;
+  background: #fff;
 
   .epet {
     &-main {

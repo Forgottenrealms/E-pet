@@ -1,11 +1,13 @@
-// import Home from '@/pages/Home'
-// import Category from '@/pages/Category'
-// import League from '@/pages/League'
-// import Cart from '@/pages/Cart'
-// import Mine from '@/pages/Mine'
+
 import Products from '@/components/categoryChildren/productType' 
 import Logo from '@/components/categoryChildren/logo'
 import ProductList from '@/components/categoryChildren/product'
+import newListPage from '@/components/categoryChildren/newListPage'
+import selectList from '@/components/categoryChildren/newListPageChildren/selectList'
+import Detail from '@/components/categoryChildren/newListPageChildren/detail'
+import Details from '@/components/categoryChildren/newListPageChildren/details'
+import DetailProduct from '@/components/categoryChildren/newListPageChildren/detailproduct'
+import DetailIssues from '@/components/categoryChildren/newListPageChildren/detailissues'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 
@@ -170,7 +172,8 @@ redirect: '/category/productType'
   meta: {
     isNav: true,
     title: '购物车',
-    icon: '&#xe614;'
+    icon: '&#xe668;',
+    isLogin: false
   },
   components: {
     default: Cart,
@@ -192,7 +195,7 @@ redirect: '/category/productType'
 },
 {
   path: '/search',
-  name: '/search',
+  name: 'search',
   meta: {
     isNav: false,
   },
@@ -200,6 +203,69 @@ redirect: '/category/productType'
     default: Search,
     tabbar: Tabbar,
   }
+},
+{
+  path:'/newlistpage',
+  name:'newlistpage',
+  meta:{
+    isNav:false,
+  },
+  components:{
+    default:newListPage,
+    // tabbar: Tabbar,
+  },
+  children:[{
+    path:'selectlist',
+    name:'selectlist',
+    meta:{
+    },
+    components:{
+      default:selectList
+    }
+  }]
+},
+{
+  path:'/detail',
+  name:'detail',
+  meta:{
+  isNav:false,
+  },
+  components:{
+    default:Detail,
+  },
+  children:[
+    {
+    path:'detailproduct',
+    name:'detailproduct',
+    meta:{  
+      title:'商品'  
+    },
+    components:{
+      default:DetailProduct
+    }
+  },
+    {
+    path:'details',
+    name:'details',
+    meta:{  
+      title:'详情'  
+    },
+    components:{
+      default:Details
+    }
+  },
+    {
+    path:'detailissues',
+    name:'detailissues',
+    meta:{  
+      title:'评价'  
+    },
+    components:{
+      default:DetailIssues
+    }
+  },
+],
+redirect: '/detail/detailproduct'
 },{
   path: '/login',
   name: 'login',
@@ -207,7 +273,7 @@ redirect: '/category/productType'
     isNav:false,
   },
   components: {
-    default: Login,
+    default: Login
   }
 },{
   path: '/register',

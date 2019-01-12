@@ -18,7 +18,17 @@
 
 <script>
 export default {
-  name: "Category"
+  name: "Category",
+  data(){
+    return {
+      a:{
+        b:1,
+      },
+      b:{
+        c:1,
+      }
+    }
+  }
 };
 </script>
 

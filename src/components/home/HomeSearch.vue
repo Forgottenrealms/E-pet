@@ -1,5 +1,10 @@
 <template>
-    <div class="epet-home-search">
+    <div 
+        :class="{
+            'epet-home-search': true,
+            'scroll-to-top': this.$store.state.isScrollTop
+        }" 
+    >
         <input type="text" id="search" name="search" placeholder="请输入搜索内容">
         <span class="icon">&#xe666;</span>
         <span class="message">&#xe601;</span>
@@ -31,11 +36,24 @@ export default {
 </style>
 
 <style lang="scss">
+.scroll-to-top {
+    background: #fff;
+
+    #search {
+        background: rgb(231, 231, 231);
+    }
+    .message {
+        color: #000 !important;
+    }
+}
+</style>
+
+<style lang="scss">
 .epet-home-search {
     position: fixed;
     width: 100%;
     height: 7.41vw;
-    z-index: 1;
+    z-index: 99;
     top: 0;
     left: 0;
 
