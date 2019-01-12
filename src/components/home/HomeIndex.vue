@@ -49,27 +49,16 @@
       </h1>
     </div>
     <!-- 品牌特卖 -->
-    <div class="epet-home-brand">
-      <h1>品牌特卖</h1>
-      <a href="javascript:void(0);">
-        进入
-        <span class="rightArrow">></span>
-      </a>
-    </div>
+    <home-title>品牌特卖</home-title>
     <div class="epet-home-brandImg">
       <h1>朗跃半湿粮专场</h1>
       <p>真材实料精湛工艺</p>
     </div>
     <!-- 轮播图2 -->
-    <!-- <div class="epet-home-swiper2 swiper-container2">
-      <div class="swiper-wrapper2">
-        <div class="swiper-slide" v-for="item in swiper2" :key="item.id">
-            <img :src="item.img">
-        </div>
-    </div>-->
-    <!-- 如果需要分页器 -->
-    <!-- <div class="swiper-pagination2"></div>
-    </div>-->
+    <home-swiper2></home-swiper2>
+    <!-- E宠国际 -->
+    <home-title>E宠国际</home-title>
+    <home-swiper3></home-swiper3>
 
     <!-- 猜你喜欢 -->
     <div class="epet-home-guess">
@@ -85,6 +74,9 @@ import HomeSearch from "./HomeSearch"; // 首页搜索框
 import "swiper/dist/css/swiper.min.css";
 import Swiper from "swiper";
 import LoadMore from "./LoadMore";
+import HomeTitle from "./HomeTitle";
+import HomeSwiper2 from "./HomeSwiper2"
+import HomeSwiper3 from "./HomeSwiper3"
 
 export default {
   name: "Index",
@@ -96,7 +88,10 @@ export default {
   },
   components: {
     homeSearch: HomeSearch,
-    loadMore: LoadMore
+    loadMore: LoadMore,
+    homeTitle: HomeTitle,
+    homeSwiper2: HomeSwiper2,
+    homeSwiper3: HomeSwiper3
   },
   created() {
     this.$http.getActivityImg().then(res => {
@@ -108,31 +103,6 @@ export default {
       this.$nextTick().then(this.initSwiper);
     });
   },
-  // beforeRouteEnter(to, from, next) {
-  //     console.log("进入了")
-  //   next(vm => {
-  //     // 请求轮播图数据
-  //     vm.$http.getSwiper().then(res => {
-  //       vm.swiper = res;
-  //       console.log(res);
-  //       // $nextTick 在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。
-  //       // vm.$nextTick(vm.initSwiper)
-  //       vm.$nextTick().then(vm.initSwiper);
-  //     });
-  //   });
-  // },
-  // beforeRouteUpdate(to, from, next) {
-  //   console.log("更改了")
-
-  //     this.$http.getSwiper().then(res => {
-  //       this.swiper = res;
-  //       console.log(res);
-  //       // $nextTick 在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。
-  //       // this.$nextTick(this.initSwiper)
-  //       this.$nextTick().then(this.initSwiper);
-  //     });
-  //   next();
-  // },
   methods: {
     initSwiper() {
       this.mySwiper = new Swiper(".swiper-container", {
@@ -187,7 +157,6 @@ export default {
         background: #fff;
 
         img {
-          // width: 100%;
           height: 69.44vw;
         }
       }
@@ -307,26 +276,7 @@ export default {
         }
       }
     }
-    // 品牌特卖
-    &-brand {
-      width: 94.72vw;
-      height: 16.39vw;
-      display: flex;
-      justify-content: space-between;
-      margin: 0 auto;
-      margin-top: 4.63vw;
-      align-items: center;
-      color: #545454;
-
-      h1 {
-        font-size: 5.74vw;
-        font-weight: bold;
-      }
-      a {
-        text-decoration: none;
-        color: #545454;
-      }
-    }
+    
     &-brandImg {
       width: 94.72vw;
       height: 43.15vw;

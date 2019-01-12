@@ -28,14 +28,22 @@
 
   <div class="login">
     <router-link class="btn-close" to="/mine" tag="p">X</router-link>
+<<<<<<< HEAD
+    <p class="login-title">用户登录</p>
+=======
     <p class="login-title">账号密码登录</p>
+>>>>>>> 5b1f5f9a3e90da069a38597f19d3ab596f3284db
     <form class="form-login">
-      <input type="text" name="telephine" placeholder="请输入手机号">
+      <input type="text" name="telephine" placeholder="请输入手机号" id="phone">
       <br>
+<<<<<<< HEAD
+      <input type="text" name="telephine" placeholder="请输入密码" id="pwd">
+=======
       <input type="text" name="telephine" placeholder="请输入密码">
+>>>>>>> 5b1f5f9a3e90da069a38597f19d3ab596f3284db
       <br>
-      <input type="button" class="btn-login" value="登录">
-      <a href>获取验证码</a>
+      <input type="button" class="btn-login" value="登录" @click="loginHandle">
+      <!-- <a href>获取验证码</a> -->
     </form>
     <div class="login-type">
       <a>短信验证码登录</a>
@@ -68,9 +76,40 @@ export default {
         weixin: "&#xe621;",
         qq: "&#xe61f;",
         zhifubao: "&#xe600;",
-        weibo: "&#xe674;"
-      }
+        weibo: "&#xe674;",
+      },
+      userLogin: {}
     };
+<<<<<<< HEAD
+  },
+  computed: {
+    ...mapState(["isLogin"])
+  },
+  watch: {
+    isLogin() {
+      // 当isLogin为true的时候，执行跳转
+      if (this.$route.params.from = "/register") {
+        this.$router.push("/home");
+      } else {
+        const { from = "/home" } = this.$route.params;
+        this.$router.push(from);
+      }
+    }
+  },
+  methods: {
+    ...mapMutations(["changeLoginStatus"]),
+    loginHandle() {
+      this.$http.postLogin()
+            .then(res => {
+              if(res[0].status == 200) {
+                console.log("登陆成功")
+                window.localStorage.setItem("epet-token", JSON.stringify(res[0].token));
+                this.changeLoginStatus(true);
+              }
+            })
+    }
+=======
+>>>>>>> 5b1f5f9a3e90da069a38597f19d3ab596f3284db
   }
 };
 </script>

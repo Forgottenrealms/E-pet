@@ -173,7 +173,7 @@ redirect: '/category/productType'
     isNav: true,
     title: '购物车',
     icon: '&#xe668;',
-    isLogin: false
+    isAuthRequired: true  // 需要登录验证
   },
   components: {
     default: Cart,
