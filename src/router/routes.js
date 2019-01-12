@@ -19,7 +19,7 @@ const League = () => import('@/pages/League')
 const Cart = () => import('@/pages/Cart')
 const Mine = () => import('@/pages/Mine')
 
-import Tabbar from '@/components/Tabbar'
+import Tabbar from '@/components/tabbar'
 import Search from '@/components/search'
 
 import HomeIndex from '@/components/home/HomeIndex'
@@ -30,7 +30,7 @@ import Hear from '@/components/home/Hear'
 import Cloths from '@/components/home/Cloths'
 import Toy from '@/components/home/Toy'
 import Sick from '@/components/home/Sick'
-import Worm from '@/components/home/Worm'
+import Worm from '@/components/home/worm'
 import Technology from '@/components/home/Technology'
 
 const routes = [{
