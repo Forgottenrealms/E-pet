@@ -1,12 +1,12 @@
 <template>
     <div class="login">
         <router-link class="btn-close" to="/mine" tag="p">X</router-link>
-        <p class="login-title ">短信验证码登录</p>
+        <p class="login-title ">账号密码登录</p>
         <form class="form-login">
-            <input type="text" name="telephine" placeholder="请输入手机号"><br/>
-            <input type="text" name="telephine" placeholder="请输入验证码"><br/>
-            <input type="button" class="btn-login" value="登录">
-            <a href="">获取验证码</a>
+            <input type="text" name="telephine" v-model="username" placeholder="请输入用户名"><br/>
+            <input type="password" name="telephine" v-model="password" placeholder="请输入密码"><br/>
+            <input type="button" class="btn-login" @click="login" value="登录">
+            <!-- <a href="">获取验证码</a> -->
         </form>
         <div class="login-type">
             <a>短信验证码登录</a>
@@ -30,7 +30,12 @@
 </template>
 
 <script>
+import {
+    mapState,
+    mapMutations
+} from 'vuex'
 export default {
+    name:'Login',
     data () {
         return {
             icon:{
@@ -38,8 +43,37 @@ export default {
                 qq:'&#xe61f;',
                 zhifubao:'&#xe600;',
                 weibo:'&#xe674;'
-            }
+            },
+            username:'',
+            password:''
+
         } 
+    },
+    computed: {
+        ...mapState(['isLogin'])
+    },
+    // watch:{
+    //     isLogin () {
+    //         // 当isLogin为true的时候，执行跳转
+    //         const {
+    //             from = '/home'
+    //         } = this.$route.params
+    //         this.$router.push(from)
+    //     }
+    // },
+    methods:{
+        ...mapMutations(['changeLoginStatus']),
+        login () {
+            console.log("进入登录")
+           this.$http.postLogin()
+            .then(resp => {
+             if (resp.code === 200)  {
+                    window.localStorage.setItem('rzg-token', resp.data.token)
+                    this.changeLoginStatus(true)
+                    console("登录成功")
+                }
+            })
+        }
     }
 }
 </script>
