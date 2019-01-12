@@ -1,41 +1,14 @@
 <template>
-    <div class="login">
-        <router-link class="btn-close" to="/mine" tag="p">X</router-link>
-        <p class="login-title ">账号密码登录</p>
-        <form class="form-login">
-            <input type="text" name="telephine" v-model="username" placeholder="请输入手机号"><br/>
-            <input type="password" name="telephine" v-model="password" placeholder="请输入密码"><br/>
-            <input type="button" class="btn-login" @click="login" value="登录">
-            <!-- <a href="">获取验证码</a> -->
-        </form>
-        <div class="login-type">
-            <a>短信验证码登录</a>
-            <router-link to="/register" tag="a">新用户注册</router-link>
-        </div>
-        <!-- 其他方式登录 -->
-        <div class="bottom">
-            <p>---------------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其他方式登录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--------------</p>
-            <ul>
-                <li v-html="icon.weixin"></li>
-                <li v-html="icon.qq"></li>
-                <li v-html="icon.zhifubao"></li>
-                <li v-html="icon.weibo"></li>
-            </ul>
-            <div class="prompt">
-                登录代表您阅读并同意<a href="">《E宠商城用户协议》</a>
-            </div>
-        </div>
-
   <div class="login">
     <router-link class="btn-close" to="/mine" tag="p">X</router-link>
-    <p class="login-title">用户登录</p>
+    <p class="login-title">账号密码登录</p>
     <form class="form-login">
-      <input type="text" name="telephine" placeholder="请输入手机号" id="phone">
+      <input type="text" name="telephine" v-model="username" placeholder="请输入手机号">
       <br>
-      <input type="text" name="telephine" placeholder="请输入密码" id="pwd">
+      <input type="password" name="telephine" v-model="password" placeholder="请输入密码">
       <br>
-      <input type="button" class="btn-login" value="登录" @click="loginHandle">
-      <!-- <a href>获取验证码</a> -->
+      <input type="button" class="btn-login" @click="login" value="登录">
+      <!-- <a href="">获取验证码</a> -->
     </form>
     <div class="login-type">
       <a>短信验证码登录</a>
@@ -50,16 +23,49 @@
         <li v-html="icon.zhifubao"></li>
         <li v-html="icon.weibo"></li>
       </ul>
-      <div class="prompt">
-        登录代表您阅读并同意
+      <div class="prompt">登录代表您阅读并同意
         <a href>《E宠商城用户协议》</a>
+      </div>
+    </div>
+
+    <div class="login">
+      <router-link class="btn-close" to="/mine" tag="p">X</router-link>
+      <p class="login-title">用户登录</p>
+      <form class="form-login">
+        <input type="text" name="telephine" placeholder="请输入手机号" id="phone">
+        <br>
+        <input type="text" name="telephine" placeholder="请输入密码" id="pwd">
+        <br>
+        <input type="button" class="btn-login" value="登录" @click="loginHandle">
+        <!-- <a href>获取验证码</a> -->
+      </form>
+      <div class="login-type">
+        <a>短信验证码登录</a>
+        <router-link to="/register" tag="a">新用户注册</router-link>
+      </div>
+      <!-- 其他方式登录 -->
+      <div class="bottom">
+        <p>---------------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其他方式登录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--------------</p>
+        <ul>
+          <li v-html="icon.weixin"></li>
+          <li v-html="icon.qq"></li>
+          <li v-html="icon.zhifubao"></li>
+          <li v-html="icon.weibo"></li>
+        </ul>
+        <div class="prompt">
+          登录代表您阅读并同意
+          <a href>《E宠商城用户协议》</a>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
+import {
+  mapState,
+  mapMutations
+} from "vuex"
 export default {
   name: "Login",
   data() {
@@ -68,7 +74,7 @@ export default {
         weixin: "&#xe621;",
         qq: "&#xe61f;",
         zhifubao: "&#xe600;",
-        weibo: "&#xe674;",
+        weibo: "&#xe674;"
       },
       userLogin: {}
     };
@@ -79,7 +85,7 @@ export default {
   watch: {
     isLogin() {
       // 当isLogin为true的时候，执行跳转
-      if (this.$route.params.from = "/register") {
+      if ((this.$route.params.from = "/register")) {
         this.$router.push("/home");
       } else {
         const { from = "/home" } = this.$route.params;
@@ -90,14 +96,16 @@ export default {
   methods: {
     ...mapMutations(["changeLoginStatus"]),
     loginHandle() {
-      this.$http.postLogin()
-            .then(res => {
-              if(res[0].status == 200) {
-                console.log("登陆成功")
-                window.localStorage.setItem("epet-token", JSON.stringify(res[0].token));
-                this.changeLoginStatus(true);
-              }
-            })
+      this.$http.postLogin().then(res => {
+        if (res[0].status == 200) {
+          console.log("登陆成功");
+          window.localStorage.setItem(
+            "epet-token",
+            JSON.stringify(res[0].token)
+          );
+          this.changeLoginStatus(true);
+        }
+      });
     }
   }
 };
