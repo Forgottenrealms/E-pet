@@ -8,6 +8,8 @@ import Detail from '@/components/categoryChildren/newListPageChildren/detail'
 import Details from '@/components/categoryChildren/newListPageChildren/details'
 import DetailProduct from '@/components/categoryChildren/newListPageChildren/detailproduct'
 import DetailIssues from '@/components/categoryChildren/newListPageChildren/detailissues'
+import HaveImg from '@/components/categoryChildren/newListPageChildren/haveImg'
+import CommentAll from '@/components/categoryChildren/newListPageChildren/commentAll'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 
@@ -262,7 +264,24 @@ redirect: '/category/productType'
     },
     components:{
       default:DetailIssues
-    }
+    },
+    children:[
+      {
+        path:'haveimg',
+        name:'haveimg',
+        components:{
+          default:HaveImg
+        }
+      },
+      {
+        path:'commentall',
+        name:'commentall',
+        components:{
+          default:CommentAll
+        }
+      }
+    ],
+    redirect: '/detail/detailissues/commentall'
   },
 ],
 redirect: '/detail/detailproduct'

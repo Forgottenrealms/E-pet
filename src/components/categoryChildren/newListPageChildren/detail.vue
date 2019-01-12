@@ -108,7 +108,7 @@ export default {
     bottom:0;
     height:10vw;
     width:100%;
-    background:red;
+    background-color:white;
   }
 }
 </style>
