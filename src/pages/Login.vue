@@ -28,11 +28,11 @@
 
   <div class="login">
     <router-link class="btn-close" to="/mine" tag="p">X</router-link>
-    <p class="login-title">短信验证码登录</p>
+    <p class="login-title">账号密码登录</p>
     <form class="form-login">
       <input type="text" name="telephine" placeholder="请输入手机号">
       <br>
-      <input type="text" name="telephine" placeholder="请输入验证码">
+      <input type="text" name="telephine" placeholder="请输入密码">
       <br>
       <input type="button" class="btn-login" value="登录">
       <a href>获取验证码</a>
@@ -59,7 +59,6 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
 
 export default {
   name: "Login",
@@ -72,24 +71,6 @@ export default {
         weibo: "&#xe674;"
       }
     };
-  },
-  computed: {
-    ...mapState(["isLogin"])
-  },
-  watch: {
-    isLogin() {
-      // 当isLogin为true的时候，执行跳转
-      if (this.$route.params.from === "/register") {
-        this.$router.push("/home");
-      } else {
-        const { from = "/home" } = this.$route.params;
-        this.$router.push(from);
-      }
-    }
-  },
-  methods: {
-    ...mapMutations(["changeLoginStatus"])
-    
   }
 };
 </script>
