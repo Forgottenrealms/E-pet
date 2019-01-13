@@ -1,5 +1,6 @@
 <template>
   <div class="login">
+    <div class="top">
     <router-link class="btn-close" to="/mine" tag="p">X</router-link>
     <p class="login-title">账号密码登录</p>
     <form class="form-login">
@@ -13,6 +14,7 @@
     <div class="login-type">
       <a>短信验证码登录</a>
       <router-link to="/register" tag="a">新用户注册</router-link>
+    </div>
     </div>
     <!-- 其他方式登录 -->
     <div class="bottom">
@@ -97,7 +99,12 @@ export default {
   height: 100%;
   background-color: #fff;
   position: relative;
-  .btn-close {
+  display:flex;
+  flex-direction:column;
+
+  .top{
+    flex: 1;
+    .btn-close {
     line-height: 16.1vw;
     font-size: 4.81vw;
     color: #9a9a9a;
@@ -155,11 +162,11 @@ export default {
       color: black;
     }
   }
+  }
+  
   .bottom {
     width: 80.92vw;
     height: 33.33vw;
-    position: fixed;
-    bottom: 0;
     margin-left: 9.61vw;
     p {
       font-size: 2.4vw;
