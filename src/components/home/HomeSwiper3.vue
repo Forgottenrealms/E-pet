@@ -1,7 +1,7 @@
 <template>
   <div class="epet-home-swiper3 swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="item in swiper3" :key="item.id">
+    <div class="swiper-wrapper home-swiper3">
+      <div class="swiper-slide homeswiper3-slide" v-for="item in swiper3" :key="item.id">
         <img :src="item.img">
       </div>
     </div>
@@ -29,7 +29,8 @@ export default {
   },
   methods: {
     initSwiper3() {
-      this.mySwiper = new Swiper(".epet-home-swiper3", {
+      this.mySwiper3 = new Swiper(".epet-home-swiper3", {
+        // autoplay: true,
         loop: true,
         pagination: {
           el: ".pages3",
@@ -46,11 +47,11 @@ export default {
       width: 94.72vw;
       margin: 0 auto;
 
-      .swiper-wrapper {
+      .home-swiper3 {
         height: 42.59vw;
         width: 100%;
 
-        .swiper-slide {
+        .homeswiper3-slide {
           height: 42.59vw;
           border-radius: 3vw;
           background: #f1e9f1;
@@ -63,7 +64,7 @@ export default {
         }
       }
 
-      .swiper-pagination {
+      .pages3 {
           margin-top: 10vw;
       }
 
