@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     initSwiper() {
-      this.mySwiper1 = new Swiper(".swiper-container", {
+      this.mySwiper1 = new Swiper(".epet-home-swiper", {
         autoplay: true, // 自动轮播
         loop: true, // 循环模式选项
 
@@ -50,7 +50,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .swiper-pagination-bullet {
   width: 1.67vw;
   height: 1.67vw;

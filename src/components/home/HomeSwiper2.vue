@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .epet-home-swiper2 {
       width: 94.72vw;
       margin: 5vw auto 0;
