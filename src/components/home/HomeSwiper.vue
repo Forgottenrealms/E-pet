@@ -1,12 +1,12 @@
 <template>
   <div class="epet-home-swiper swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="item in swiper" :key="item.id">
+    <div class="swiper-wrapper home-swiper1">
+      <div class="swiper-slide homeswiper1-slide" v-for="item in swiper" :key="item.id">
         <img :src="item.img">
       </div>
     </div>
     <!-- 如果需要分页器 -->
-    <div class="swiper-pagination"></div>
+    <div class="swiper-pagination pagination1"></div>
   </div>
 </template>
 
@@ -36,13 +36,13 @@ export default {
   },
   methods: {
     initSwiper() {
-      this.mySwiper = new Swiper(".swiper-container", {
+      this.mySwiper1 = new Swiper(".swiper-container", {
         autoplay: true, // 自动轮播
         loop: true, // 循环模式选项
 
         // 如果需要分页器
         pagination: {
-          el: ".swiper-pagination"
+          el: ".pagination1"
         }
       });
     }
@@ -71,14 +71,14 @@ export default {
   padding-top: percentage(630 / 1080);
   position: relative;
 
-  .swiper-wrapper {
+  .home-swiper1 {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
 
-    .swiper-slide {
+    .homeswiper1-slide {
       background: red;
 
       img {
@@ -87,7 +87,7 @@ export default {
     }
   }
 
-  .swiper-pagination {
+  .pagination1 {
     bottom: 8.61vw;
   }
 }

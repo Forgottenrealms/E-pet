@@ -1,9 +1,9 @@
 <template>
   <div class="epet-home-index">
     <!-- 轮播图 -->
-    <div class="epet-home-swiper swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="item in swiper" :key="item.id">
+    <div class="epet-home-swiper1 swiper-container">
+      <div class="swiper-wrapper home-swiper">
+        <div class="swiper-slide homeswiper-slide" v-for="item in swiper" :key="item.id">
           <img :src="item.img">
         </div>
       </div>
@@ -105,7 +105,7 @@ export default {
   },
   methods: {
     initSwiper() {
-      this.mySwiper = new Swiper(".swiper-container", {
+      this.mySwiper = new Swiper(".epet-home-swiper1", {
         autoplay: true, // 自动轮播
         loop: true, // 循环模式选项
 
@@ -141,19 +141,20 @@ export default {
   height: 100%;
 
   // 轮播图
-  .epet-home-swiper {
+  .epet-home-swiper1 {
     width: 100%;
     height: 0;
     padding-top: percentage(750 / 1080);
 
-    .swiper-wrapper {
+    .home-swiper {
       position: absolute;
       left: 0;
       right: 0;
       top: 0;
       bottom: 0;
+      z-index: 998;
 
-      .swiper-slide {
+      .homeswiper-slide {
         background: #fff;
 
         img {
@@ -163,6 +164,7 @@ export default {
     }
 
     .swiper-pagination {
+      z-index: 999;
       bottom: 8.61vw;
     }
   }
