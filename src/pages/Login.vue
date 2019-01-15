@@ -29,7 +29,6 @@
         <a href>《E宠商城用户协议》</a>
       </div>
     </div>
-
   </div>
 </template>
 

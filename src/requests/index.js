@@ -42,6 +42,10 @@ export const listProduct = () =>{
 export const matchProduct = () =>{
   return ajax.get('123613/api/productlist/e')
 }
+//品牌logo
+export const getLogo = () =>{
+  return ajax.get('123613/api/productlist/i')
+}
 //用户评论接口
 export const getCommentData = () =>{
   return ajax.get('/123613/api/productlist/g')

@@ -21,6 +21,7 @@ export default {
   name: "Category",
   data(){
     return {
+      
     }
   }
 };
@@ -71,7 +72,7 @@ export default {
     font-family: "iconfont" !important;
     position: absolute;
     top: 6.3vw;
-    left: 34vw;
+    left: 32vw;
     font-size: 5vw;
     color: #999999;
     font-style: normal;

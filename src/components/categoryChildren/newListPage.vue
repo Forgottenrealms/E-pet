@@ -26,7 +26,8 @@
           :class="{
                 changecolor:this.count3%2===0
             }"
-        >价格</li>
+        >
+        <span class="price-up">&#xe64c;</span>价格<span class="price-down">&#xe64d;</span></li>
         <li
           @click="showthislist4"
           :class="{
@@ -89,15 +90,86 @@ export default {
       this.count2++;
       // console.log(this.productList);
       //实现销量排序的功能
-      this.productList.forEach(obj=>{
-        console.log(obj.personNumber);
-      })
+      // let array=[];
+      // const rep=this.productList;
+      // this.productList.forEach((obj,index)=>{
+      //    array.push(obj.personNumber);
+      // })
+
+      for (let i = this.productList.length - 1; i > 0; i--) {
+        //在 0-i 范围内，将该范围内最大的数字沉到i
+        for (let j = 0; j < i; j++) {
+          if (
+            this.productList[j].personNumber >
+            this.productList[j + 1].personNumber
+          ) {
+            //交换
+            let temp = this.productList[j];
+            this.productList[j] = this.productList[j + 1];
+            this.productList[j + 1] = temp;
+          }
+        }
+      }
       if (this.$route.path === "/newlistpage/selectlist") {
         this.$router.push("/newlistpage");
       }
     },
-    showthislist3() {
+    showthislist3(e) {
       this.count3++;
+      //实现升序的排序，实现降序的
+      if (e.target.className === "price-up") {
+        for (let i = this.productList.length - 1; i > 0; i--) {
+          //在 0-i 范围内，将该范围内最大的数字沉到i
+          for (let j = 0; j < i; j++) {
+            if (this.productList[j].price >= this.productList[j + 1].price) {
+              //交换
+              let temp = this.productList[j];
+              this.productList[j] = this.productList[j + 1];
+              this.productList[j + 1] = temp;
+            }
+          }
+        }
+      } else if (e.target.className === "price-down") 
+      {
+        console.log("降序");
+        for (let i = this.productList.length - 1; i > 0; i--) {
+          //在 0-i 范围内，将该范围内最大的数字沉到i
+          for (let j = 0; j < i; j++) {
+            if (this.productList[j].price <= this.productList[j + 1].price) {
+              //交换
+              let temp = this.productList[j];
+              this.productList[j] = this.productList[j + 1];
+              this.productList[j + 1] = temp;
+            }
+          }
+        }
+      }
+      else{
+        //默认升序排序
+                for (let i = this.productList.length - 1; i > 0; i--) {
+          //在 0-i 范围内，将该范围内最大的数字沉到i
+          for (let j = 0; j < i; j++) {
+            if (this.productList[j].price >= this.productList[j + 1].price) {
+              //交换
+              let temp = this.productList[j];
+              this.productList[j] = this.productList[j + 1];
+              this.productList[j + 1] = temp;
+            }
+          }
+        }
+      }
+      // for (let i = this.productList.length - 1; i > 0; i--) {
+      //   //在 0-i 范围内，将该范围内最大的数字沉到i
+      //   for (let j = 0; j < i; j++) {
+      //     if (this.productList[j].price >= this.productList[j + 1].price) {
+      //       //交换
+      //       let temp = this.productList[j];
+      //       this.productList[j] = this.productList[j + 1];
+      //       this.productList[j + 1] = temp;
+      //     }
+      //   }
+      //   console.log(this.productList[i].price);
+      // }
       if (this.$route.path === "/newlistpage/selectlist") {
         this.$router.push("/newlistpage");
       }
@@ -114,6 +186,15 @@ export default {
         console.log(this.productList);
       });
     },
+    showSelectData(){
+       console.log(this.$route.params.title);
+      if( typeof(this.$route.params.title)=='undefined'){
+        console.log("为空");
+      }
+      else{
+      this.setdata=this.$route.params.title;
+      }
+    },
     toDetail(id) {
       //向详情页面传送数据
       const result = this.productList.filter(item => id == item.id);
@@ -126,7 +207,7 @@ export default {
         }
       });
     },
-    AddCarts(){
+    AddCarts() {
       console.log("阻止了");
     }
   },
@@ -135,7 +216,10 @@ export default {
     next(vm => {
       vm.getdata();
     });
-  }
+  },
+updated(){
+  this.showSelectData();
+}
 };
 </script>
 
@@ -154,35 +238,16 @@ export default {
     url("//at.alicdn.com/t/font_1003828_hx44pbx0mm.svg#iconfont") format("svg");
 }
 @font-face {
-  font-family: "iconfont"; /* project id 1003674 */
-  src: url("//at.alicdn.com/t/font_1003674_1nvfv1oycvr.eot");
-  src: url("//at.alicdn.com/t/font_1003674_1nvfv1oycvr.eot?#iefix")
-      format("embedded-opentype"),
-    url("//at.alicdn.com/t/font_1003674_1nvfv1oycvr.woff2") format("woff2"),
-    url("//at.alicdn.com/t/font_1003674_1nvfv1oycvr.woff") format("woff"),
-    url("//at.alicdn.com/t/font_1003674_1nvfv1oycvr.ttf") format("truetype"),
-    url("//at.alicdn.com/t/font_1003674_1nvfv1oycvr.svg#iconfont") format("svg");
-}
-@font-face {
   font-family: "iconfont"; /* project id 1003828 */
-  src: url("//at.alicdn.com/t/font_1003828_on15xq6njn.eot");
-  src: url("//at.alicdn.com/t/font_1003828_on15xq6njn.eot?#iefix")
+  src: url("//at.alicdn.com/t/font_1003828_wkwi4nhu59b.eot");
+  src: url("//at.alicdn.com/t/font_1003828_wkwi4nhu59b.eot?#iefix")
       format("embedded-opentype"),
-    url("//at.alicdn.com/t/font_1003828_on15xq6njn.woff2") format("woff2"),
-    url("//at.alicdn.com/t/font_1003828_on15xq6njn.woff") format("woff"),
-    url("//at.alicdn.com/t/font_1003828_on15xq6njn.ttf") format("truetype"),
-    url("//at.alicdn.com/t/font_1003828_on15xq6njn.svg#iconfont") format("svg");
+    url("//at.alicdn.com/t/font_1003828_wkwi4nhu59b.woff2") format("woff2"),
+    url("//at.alicdn.com/t/font_1003828_wkwi4nhu59b.woff") format("woff"),
+    url("//at.alicdn.com/t/font_1003828_wkwi4nhu59b.ttf") format("truetype"),
+    url("//at.alicdn.com/t/font_1003828_wkwi4nhu59b.svg#iconfont") format("svg");
 }
-@font-face {
-  font-family: "iconfont"; /* project id 1003828 */
-  src: url("//at.alicdn.com/t/font_1003828_d9kgu7vmhrm.eot");
-  src: url("//at.alicdn.com/t/font_1003828_d9kgu7vmhrm.eot?#iefix")
-      format("embedded-opentype"),
-    url("//at.alicdn.com/t/font_1003828_d9kgu7vmhrm.woff2") format("woff2"),
-    url("//at.alicdn.com/t/font_1003828_d9kgu7vmhrm.woff") format("woff"),
-    url("//at.alicdn.com/t/font_1003828_d9kgu7vmhrm.ttf") format("truetype"),
-    url("//at.alicdn.com/t/font_1003828_d9kgu7vmhrm.svg#iconfont") format("svg");
-}
+
 .iconfont {
   font-family: "iconfont" !important;
   font-size: 9vw;
@@ -214,7 +279,7 @@ input {
 }
 .listnav {
   height: 13.47vw;
-  width:100%;
+  width: 100%;
   border-bottom: 0.1vw solid #dedede;
   .fournav {
     height: 100%;
@@ -225,36 +290,52 @@ input {
     .filter-product {
       font-family: "iconfont";
       display: inline-block;
-      height:3vw;
-      width:3vw;
+      height: 3vw;
+      width: 3vw;
       font-size: 5.2vw;
     }
     li:nth-child(3) {
       position: relative;
-      &::before {
-        content: "";
-        display: inline-block;
+      .price-up {
+        font-family: "iconfont";
         position: absolute;
-        right: -4.4vw;
-        top: -2.8vw;
-        border-style: solid;
-        border-width: 1.8vw 1.8vw 1.8vw 1.8vw;
-        border-color: transparent transparent #999999 transparent;
-        width: 0px;
-        height: 0px;
+        top: -1.5vw;
+        right: -4.5vw;
+        color: #666666;
+        font-size: 1.5vw;
       }
-      &::after {
-        content: "";
-        display: inline-block;
+      .price-down {
+        font-family: "iconfont";
         position: absolute;
-        right: -4.4vw;
-        top: 2vw;
-        border-style: solid;
-        border-width: 1.8vw 1.8vw 1.8vw 1.8vw;
-        border-color: #999999 transparent transparent transparent;
-        width: 0px;
-        height: 0px;
+        top: 2.5vw;
+        right: -4.5vw;
+        color: #666666;
+        font-size: 1.5vw;
       }
+      // &::before {
+      //   content: "";
+      //   display: inline-block;
+      //   position: absolute;
+      //   right: -4.4vw;
+      //   top: -2.8vw;
+      //   border-style: solid;
+      //   border-width: 1.8vw 1.8vw 1.8vw 1.8vw;
+      //   border-color: transparent transparent #999999 transparent;
+      //   width: 0px;
+      //   height: 0px;
+      // }
+      // &::after {
+      //   content: "";
+      //   display: inline-block;
+      //   position: absolute;
+      //   right: -4.4vw;
+      //   top: 2vw;
+      //   border-style: solid;
+      //   border-width: 1.8vw 1.8vw 1.8vw 1.8vw;
+      //   border-color: #999999 transparent transparent transparent;
+      //   width: 0px;
+      //   height: 0px;
+      // }
     }
   }
 }
@@ -307,7 +388,7 @@ input {
     }
   }
   .product-right {
-    flex:1;
+    flex: 1;
     color: #4f4f4f;
     font-size: 3.2vw;
     padding-left: 2vw;

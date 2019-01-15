@@ -19,7 +19,9 @@ export default {
   },
   methods: {
     back(e) {
-       this.$router.push({
+      // console.log(e.target.innerText);
+      //  this.$emit('getSelectData',e.target.innerText)
+           this.$router.push({
            name:'newlistpage',
            path:'/newlistpage',
            params:{
@@ -33,12 +35,12 @@ export default {
 
 <style lang="scss" scoped>
 .selectList {
-  height: 40vw;
-  width: 100%;
-  display: flex;
-  position: absolute;
+  // height: 40vw;
+  // width: 100%;
+  // display: flex;
+  // position: absolute;
   background: white;
-  z-index: 999;
+  // z-index: 999;
   .normalList {
     width: 100%;
     li {
