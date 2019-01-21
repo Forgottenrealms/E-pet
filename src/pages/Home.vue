@@ -11,7 +11,7 @@
 <script>
 import HomeNav from '@/components/home/HomeNav'
 import HomeSearch from '@/components/home/HomeSearch'
-
+console.log(this)
 export default {
     name: 'Home',
     components: {

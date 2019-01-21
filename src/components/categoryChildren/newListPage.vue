@@ -61,7 +61,7 @@
           <div class="product-right-bottom">
             <div class="good-issues">互动:({{item.issues}}%好评)</div>
             <div class="sale-amount">售出:{{item.personNumber}}</div>
-            <span class="shop-cart" @click.stop="AddCarts">&#xe643;</span>
+            <span class="shop-cart" @click.stop="addToCart(item)">&#xe643;</span>
           </div>
         </div>
       </div>
@@ -70,7 +70,9 @@
 </template>
 
 <script>
+import {mapMutations} from "vuex"
 export default {
+
   data() {
     return {
       count1: Number(1),
@@ -83,6 +85,7 @@ export default {
   },
   name: "newListPage",
   methods: {
+    ...mapMutations(['addToCart']),
     showthislist1() {
       this.count1++;
     },
@@ -207,9 +210,6 @@ export default {
         }
       });
     },
-    AddCarts() {
-      console.log("阻止了");
-    }
   },
   beforeRouteEnter(to, from, next) {
     // just use `this`
