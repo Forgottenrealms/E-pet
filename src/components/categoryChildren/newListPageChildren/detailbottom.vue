@@ -13,16 +13,23 @@
                 <span>购物车</span> 
         </div>
         <div class="detailbottom-add-to-cart display">
-               <button class="cart">加入购物车</button>
+               <button class="cart" @click="addToCart(product)">加入购物车</button>
         </div>
+       
     </div>
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
 export default {
   name: "detailBottom",
   data() {
-    return {};
+    return {
+      product:JSON.parse(window.sessionStorage.getItem('get-product-detail'))[0]
+    };
+  },
+  methods:{
+    ...mapMutations(['addToCart'])
   }
 };
 </script>
