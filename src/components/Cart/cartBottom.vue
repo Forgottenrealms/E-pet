@@ -35,7 +35,7 @@ export default {
 <style lang="scss" scoped>
 .cart-bottom {
   position: absolute;
-  bottom: 0 vw;
+  bottom: 0vw;
   width: 100%;
   height: 10vw;
   display: flex;
